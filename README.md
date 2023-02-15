@@ -16,10 +16,43 @@ Additionally, the project includes an admin interface that allows the administra
 ## Table of Contents
 
 - [Introduction](#travel-blog)
+- [User Experience](#user-experience)
     - [User Stories](#user-stories)
     - [Agile Methodology](#agile-methodology)
+- [Design](#design)
+    - [Wireframes](#wireframes)
+    - [Typgraphy and colour scheme](#typography-and-colour-scheme)
+- [Database Diagram](#database-diagram)
+- [Features](#features)
+- [Testing](#testing)
+- [Technologies Used](#technologies-used)
+- [Deployment](#deployment)
+- [Credits](#credits)
+- [Acknowledgments](#acknowledgements)        
     
 
-## User Stories    
+## User Experience
 
-## Agile Methodology
+### User Stories    
+
+### Agile Methodology
+
+## Design
+
+### Wireframes
+
+### Typography and colour scheme
+
+## Database diagram
+
+## Features
+
+## Testing
+
+## Technologies Used
+
+## Deployment
+
+## Credits
+
+## Acknowledgements
