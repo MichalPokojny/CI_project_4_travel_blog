@@ -33,8 +33,8 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     comment_count = models.IntegerField(default=0)
     category = models.ManyToManyField(Category)
-    latitude = models.DecimalField(max_digits=22, decimal_places=16)
-    longtitute = models.DecimalField(max_digits=22, decimal_places=16)
+    latitude = models.DecimalField(max_digits=22, decimal_places=6, default=0)
+    longtitute = models.DecimalField(max_digits=22, decimal_places=6, default=0)
 
     class Meta:
         ordering = ['-created_on']
