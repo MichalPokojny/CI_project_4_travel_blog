@@ -50,6 +50,18 @@ Additionally, the project includes an admin interface that allows the administra
 ## Testing
 
 ## Technologies Used
+- HTML 5
+- CSS 3
+- Python
+- Javascript
+- Balsamiq
+- LucidChart - Diagram
+- Bootstrap
+- Jquery
+- Django
+- GitHub
+- GitPod
+
 
 ## Deployment
 
