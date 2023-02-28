@@ -61,10 +61,12 @@ Additionally, the project includes an admin interface that allows the administra
 - Django
 - GitHub
 - GitPod
+- LogoAi - create logo
 
 
 ## Deployment
 
 ## Credits
+- https://www.youtube.com/@AdrianTwarog (Navbar)
 
 ## Acknowledgements

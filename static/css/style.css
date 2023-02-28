@@ -4,3 +4,13 @@
     box-sizing: border-box;
 }
 
+.custom-nav {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.bg-navbar {
+    background-color: rgb(12,52,61);
+}
