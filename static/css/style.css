@@ -1,8 +1,13 @@
+/*---- General Styling ----*/
+
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/*---- Navigation Bar ----*/
 
 .custom-nav {
     display: flex;
@@ -12,5 +17,38 @@
 }
 
 .bg-navbar {
+    background-color: rgba(12,52,61,0.9);
+}
+
+
+/*---- Footer ----*/
+
+footer {
     background-color: rgb(12,52,61);
+    margin: 0 !important;
+}
+
+.social-links {
+    
+    font-size : 150%;
+    
+    margin: 1em 3em 0;
+}
+
+.contact-details {
+    
+    float: right;
+    font-size : 100%;
+    
+    margin: 1.5em 3em 0;
+}
+
+.contact-details > li > p, .social-links > li > a  {
+    color: rgb(98, 109, 119);
+    
+}
+
+.author > p  {
+    color: rgb(119, 132, 144);
+    border-top: 1px solid rgb(119, 132, 144);;
 }
