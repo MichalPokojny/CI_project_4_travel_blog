@@ -20,7 +20,7 @@
          <!-- Navigation bar with active links -->
          <nav class="navbar navbar-expand-md fixed-top bg-navbar navbar-dark">
             <!-- Logo -->
-            <a href="index.html" class="navbar-brand fs-3 ms-3"><img src="{% static 'media/website-logo.png' %}" alt="Website logo" style="height:3rem;"></a>
+            <a href="index.html" class="navbar-brand fs-3 ms-3"><img src="{% static 'media/logo.png' %}" alt="Website logo" style="height: 4rem;"></a>
             <!-- Collapse menu button -->
             <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#btn" aria-controls="btn" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa-solid fa-bars"></i>
@@ -28,8 +28,8 @@
             <div class="collapse navbar-collapse" id="btn">
                 <!-- Navigation links -->
                <ul class="navbar-nav custom-nav ">
-                  <li class="nav-item active">
-                     <a href="index.html" class="nav-link">Home</a>
+                  <li class="nav-item">
+                     <a href="index.html" class="nav-link active">Home</a>
                   </li>
                   <li class="nav-item">
                      <a href="#" class="nav-link">About&nbspUs</a>
@@ -61,7 +61,7 @@
                         <div class="dropdown-menu dropdown-menu-lg-end" style="width:300px;">
                            <form class="d-flex">
                               <input type="text" class="form-control ms-1 me-1">
-                              <button type="submit" class="btn btn-outline-secondary me-1">Search</button>
+                              <button type="submit" class="btn btn-outline-secondary me-1" style="color:#111c79; font-weight: bold;" >Search</button>
                            </form>
                         </div>
                      </div>
@@ -76,39 +76,45 @@
             </div>
          </nav>
       </header>
-      <main style="height:850px;">
+      <main style="height:980px;">
          {% block content %}
          <!-- Main content -->
          {% endblock content %}
       </main>
       <!-- Footer links with text -->
       <footer>
-        <div class="row">
-            <div class="col md-6">
-                <ul class="list-inline social-links">
-                    <li class="list-inline-item">
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-4">
+                <ul class="social-links d-flex justify-content-center">
+                    <li class="list-inline-item ms-2">
                         <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in a new tab)">
                             <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
                             <span class="sr-only">Facebook</span>
                         </a>
                     </li>
-                    <li class="list-inline-item">
+                    <li class="list-inline-item ms-2">
                         <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </li>
-                    <li class="list-inline-item">
+                    <li class="list-inline-item ms-2">
                         <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="Visit our Youtube page (opens in a new tab)">
                             <i class="fa-brands fa-youtube"></i>
                         </a>
                     </li>
+                    <li class="list-inline-item ms-2">
+                     <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Visit our LinkedIn page (opens in a new tab)">
+                        <i class="fa-brands fa-linkedin"></i>
+                     </a>
+                 </li>
                 </ul>
             </div>
-            <div class="col md-6">
-                <ul class="list-inline contact-details">
-                    <li class="list-inline-item"><p><i class="fa-solid fa-phone"></i> +353 89 000 0000</p></li>
-                    <li class="list-inline-item"><p><i class="fa-solid fa-envelope"></i> michal.pokojny@hotmail.com</p></li>
-                    <li class="list-inline-item"><p><i class="fa-solid fa-house"></i> 1 Long Address Dublin</p></li>
+            <div class="col-md-8  d-flex justify-content-start">
+                <ul class="contact-details text-center">
+                    <li class="list-inline-item ms-2"><p><i class="fa-solid fa-phone"></i> +353 89 000 0000</p></li>
+                    <li class="list-inline-item ms-2"><p><i class="fa-solid fa-envelope"></i> michal.pokojny@hotmail.com</p></li>
+                    <li class="list-inline-item ms-2"><p><i class="fa-solid fa-house"></i> 1 Long Address Dublin</p></li>
                 </ul>
             </div>
         </div>
