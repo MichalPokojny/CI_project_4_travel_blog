@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
+<section id="carousel">
     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -12,19 +12,19 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677705592/static/carousel-image/northern-lights_ymlxad.jpg" class="d-block w-100 " alt="...">
+            <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677705592/static/carousel-image/northern-lights_ymlxad.jpg" class="d-block w-100 carousel-img" alt="northern-lights">
           </div>
           <div class="carousel-item">
-            <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677707822/static/carousel-image/landscape-road_yzo3uw.jpg" class="d-block w-100" alt="...">
+            <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677707822/static/carousel-image/landscape-road_yzo3uw.jpg" class="d-block w-100 carousel-img" alt="landscape-road">
           </div>
           <div class="carousel-item">
-            <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677707891/static/carousel-image/london-bridge_yhisgg.jpg" class="d-block w-100" alt="...">
+            <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677707891/static/carousel-image/london-bridge_yhisgg.jpg" class="d-block w-100 carousel-img" alt="london-bridge">
           </div>
           <div class="carousel-item">
-            <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677707968/static/carousel-image/old-city_xnrdbv.jpg" class="d-block w-100" alt="...">
+            <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677707968/static/carousel-image/old-city_xnrdbv.jpg" class="d-block w-100 carousel-img" alt="old-city">
           </div>
           <div class="carousel-item">
-            <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677708038/static/carousel-image/nature-night_bhiy0t.jpg" class="d-block w-100" alt="...">
+            <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677708038/static/carousel-image/nature-night_bhiy0t.jpg" class="d-block w-100 carousel-img" alt="nature">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -38,8 +38,35 @@
         <div class="carousel-cover">
             <h1>Adventurous</h1>
             <p>Life is short, explore the world and make every moment count.</p>
-            <button class="btn explore-btn" style="color: #111c79; font-weight: bold;">Explore</button>
+            <a href="#welcome" class="btn explore-btn" style="color: #111c79; font-weight: bold;">Explore</a>
         </div>
       </div>
-
+    </section>
+    <section id="welcome">
+        <div class="container welcome-box">
+        <div class="row text-center">
+            <h1>Welcome to our blog!</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>This is a place where adventure-seekers, wanderers, 
+                    and travelers come together to share their love for exploring the world.
+                     Whether you're a seasoned globetrotter or a first-time traveler, you'll find inspiration, tips, and stories to fuel your wanderlust and help you plan your next adventure.
+                    Our team of travel enthusiasts is dedicated to bringing you the latest 
+                    travel trends, hidden gems, and must-see destinations from around the world. From backpacking through Southeast Asia to luxury getaways in the Caribbean, we cover it all.
+                    But we're not just about showcasing the best travel experiences. We also 
+                    believe in responsible travel and making a positive impact on the places we visit. 
+                    We share tips on sustainable travel, ethical tourism, and ways to give back to local communities.
+                    So come join us on this journey, as we explore the world and create unforgettable
+                     memories along the way. Happy travels!
+                </p>
+            </div>
+            <div class="col-md-6">
+                <div class="welcome-img-box">
+                <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677717983/static/carousel-image/travel-couple_apgavu.png" alt="hiker" class="welcome-img">
+            </div>
+            </div>
+        </div>
+    </div>
+    </section>
 {% endblock %}
