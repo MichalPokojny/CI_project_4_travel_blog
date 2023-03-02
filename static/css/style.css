@@ -8,18 +8,23 @@
 }
 
 body {
-    background-image: linear-gradient(to bottom, #c33764, #c7367a, #c53b93, #bd44ad, #ae51c7, #9a53c9, #8454ca, #6c55ca, #5749b3, #443d9d, #303187, #1d2671);
+    background-image: linear-gradient(to bottom, #3a663a, #5c6322, #7f5a1b, #9e4c2e, #b13d54, #af3369, #a53180, #8f3899, #7d319c, #682b9f, #4c28a3, #1827a6);
     font-family: 'Inconsolata', monospace;
     
 }
 
+/* .row {
+    --bs-gutter-x: 0;
+} */
 
 /*---- Navigation Bar ----*/
 
 .navbar {
-    background-image: linear-gradient(to bottom, #c33764, #c7367a, #c53b93, #bd44ad);
+    /* background-image: linear-gradient(to bottom, #c33764, #c7367a, #c53b93,); */
     padding: 0;
     opacity: 0.9;
+    height: fit-content;
+    z-index: 2;
 }
 
 .custom-nav {
@@ -121,22 +126,24 @@ footer {
 
 .author > p  {
     color: rgb(119, 132, 144);
-    border-top: 1px solid rgb(119, 132, 144);;
+    border-top: 1px solid #778490;
 }
 
 /* ---- index page---- */
 
+
 .carousel-item {
-    height: 100vh;
+    height:91vh;
 }
 
 .carousel-cover {
+    border-radius: 3%;
     position: absolute;
-    top: 55%;
-    right: 7%;
-    width: 40vh;
-    height: 30vh;
-    background-color: rgba(255, 255, 255, 0.33);
+    top: 35%;
+    right: 15%;
+    width: 50vh;
+    height: fit-content;
+    background-color: #ffffff66;
     z-index: 2;
     text-align: center;
     
@@ -157,7 +164,7 @@ footer {
 }
 
 .carousel-img {
-    height: 100vh;
+    height: 91vh;
 }
 
 @media screen and (max-width : 450px){
@@ -169,30 +176,41 @@ footer {
 
 .explore-btn {
     /* border: 1px solid #111c79;; */
+    margin-bottom: 5px;
     border-radius: 10%;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #00000033;
 }
 
 .welcome-box{
     
-    margin-top: 10px;
+    /* margin-top: 5px; */
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.33);
+    background-color: #00000046;
+    color: #d0b3b3;
+    border-radius: 0.5%;
 }
 
 .welcome-img-box {
-    background-color: rgba(255, 255, 255, 0.33);
+    
     overflow: hidden;
-    width: 40%;
-    height: 40%;
+    max-width: 100%;
+    height: auto;
     border-radius: 50%;
-    position: absolute;
+    position: relative;
+    margin-bottom: 10px;
 }
 
 .welcome-img {
     margin: 0;
+    overflow: hidden;
+    transform: translate(0%, 0%) scale(1.06)
     /* top: 50%;
     left: 50%;
     transform: translate(-30%, -25%) scale(0.5); */
 }
+
+/* .welcome-box > h1 {
+    margin-top: ;
+} */
+
