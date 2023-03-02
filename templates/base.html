@@ -20,7 +20,7 @@
          <!-- Navigation bar with active links -->
          <nav class="navbar navbar-expand-md fixed-top bg-navbar navbar-dark">
             <!-- Logo -->
-            <a href="index.html" class="navbar-brand fs-3 ms-3"><img src="{% static 'media/logo.png' %}" alt="Website logo" style="height: 4rem;"></a>
+            <a href="{% url 'home' %}" class="navbar-brand fs-3 ms-3"><img src="{% static 'media/logo.png' %}" alt="Website logo" style="height: 4rem; width: 12rem;"></a>
             <!-- Collapse menu button -->
             <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#btn" aria-controls="btn" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa-solid fa-bars"></i>
@@ -29,7 +29,7 @@
                 <!-- Navigation links -->
                <ul class="navbar-nav custom-nav ">
                   <li class="nav-item">
-                     <a href="index.html" class="nav-link active">Home</a>
+                     <a href="{% url 'home' %}" class="nav-link active">Home</a>
                   </li>
                   <li class="nav-item">
                      <a href="#" class="nav-link">About&nbspUs</a>
@@ -60,30 +60,38 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-lg-end" style="width:300px;">
                            <form class="d-flex">
-                              <input type="text" class="form-control ms-1 me-1">
+                              <input type="search" class="form-control ms-1 me-1" placeholder="Search" aria-label="search">
                               <button type="submit" class="btn btn-outline-secondary me-1" style="color:#111c79; font-weight: bold;" >Search</button>
                            </form>
                         </div>
                      </div>
                   </li>
+                  {% if user.is_authenticated %}
+                  <li class="nav-item ">
+                     <a href="#" class="nav-link">Profile</a>
+                  </li>
+                  <li class="nav-item ">
+                     <a href="#" class="nav-link">Logout</a>
+                  </li>
+                  {% else %}
                   <li class="nav-item ">
                      <a href="#" class="nav-link">Register</a>
                   </li>
                   <li class="nav-item">
                      <a href="#" class="nav-link">Login</a>
                   </li>
+                  {% endif %}
                </ul>
             </div>
          </nav>
       </header>
-      <main style="height:980px;">
+      <main>
          {% block content %}
          <!-- Main content -->
          {% endblock content %}
       </main>
       <!-- Footer links with text -->
       <footer>
-
         <div class="row justify-content-md-center">
             <div class="col-md-4">
                 <ul class="social-links d-flex justify-content-center">
@@ -96,16 +104,19 @@
                     <li class="list-inline-item ms-2">
                         <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)">
                             <i class="fa-brands fa-instagram"></i>
+                            <span class="sr-only">Instagram</span>
                         </a>
                     </li>
                     <li class="list-inline-item ms-2">
                         <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="Visit our Youtube page (opens in a new tab)">
                             <i class="fa-brands fa-youtube"></i>
+                            <span class="sr-only">Youtube</span>
                         </a>
                     </li>
                     <li class="list-inline-item ms-2">
                      <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Visit our LinkedIn page (opens in a new tab)">
                         <i class="fa-brands fa-linkedin"></i>
+                        <span class="sr-only">LinkedIn</span>
                      </a>
                  </li>
                 </ul>

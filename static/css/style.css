@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Nixie+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Inconsolata&family=Nixie+One&display=swap');
 /*---- General Styling ----*/
 
 *{
@@ -15,6 +15,11 @@ body {
 
 
 /*---- Navigation Bar ----*/
+
+.navbar {
+    background-image: linear-gradient(to bottom, #c33764, #c7367a, #c53b93, #bd44ad);
+    padding: 0;
+}
 
 .custom-nav {
     display: flex;
@@ -34,18 +39,17 @@ body {
     transition: 0.9s;
 }
 
-.show {
+/* .show {
     
     border-radius: 5%;
     background-color: rgba(255, 255, 255, 0.02);
     
-}
+} */
 
 /*---- Footer ----*/
 
 footer {
-    /* background-color: rgb(12,52,61); */
-    margin: 0 !important;
+    margin-top: 20px !important;
 }
 
 .social-links {
@@ -64,7 +68,6 @@ footer {
     height: 50px;
     line-height: 50px;
     background: #443d9d;
-    
     text-align: center;
     border-radius: 30%;
     transition: 0.9s;
@@ -89,15 +92,15 @@ footer {
 .social-links > li > a:hover:before { 
 
     transform: scale(1.1);
-    box-shadow: 0 0 15px #c33764;
+    box-shadow: 0 0 15px #bd44ad;
 
 }
 
 .social-links > li > a:hover {
 
-    color: #c33764;
-    box-shadow: 0 0 5px #c33764;
-    text-shadow: 0 0 5px #c33764;
+    color: #bd44ad;
+    box-shadow: 0 0 5px #bd44ad;
+    text-shadow: 0 0 5px #bd44ad;
 
 }
 
@@ -118,4 +121,49 @@ footer {
 .author > p  {
     color: rgb(119, 132, 144);
     border-top: 1px solid rgb(119, 132, 144);;
+}
+
+/* ---- index page---- */
+
+.carousel-item {
+    height: 100vh;
+}
+
+.carousel-cover {
+    position: absolute;
+    top: 55%;
+    right: 7%;
+    width: 40vh;
+    height: 30vh;
+    background-color: rgba(255, 255, 255, 0.33);
+    z-index: 2;
+    text-align: center;
+    
+}
+
+.carousel-cover > h1 {
+    margin-top: 15px;
+    font-family: 'Homemade Apple', cursive;
+    color: #111c79;
+    border-radius: 50%;
+    border-bottom: 1px solid #111c79;
+}
+
+.carousel-cover > p {
+    font-family: 'Homemade Apple', cursive;
+    font-size: 150%;
+    color: #111c79;
+}
+
+@media screen and (max-width : 450px){
+    .carousel-cover > p {
+
+        font-size: 100%;
+    }
+}
+
+.explore-btn {
+    /* border: 1px solid #111c79;; */
+    border-radius: 10%;
+    background-color: rgba(255, 255, 255, 0.3);
 }
