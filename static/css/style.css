@@ -133,7 +133,7 @@ footer {
 
 
 .carousel-item {
-    height:91vh;
+    height:92vh;
 }
 
 .carousel-cover {
@@ -164,7 +164,7 @@ footer {
 }
 
 .carousel-img {
-    height: 91vh;
+    height: 92vh;
 }
 
 @media screen and (max-width : 450px){
@@ -194,7 +194,7 @@ footer {
 .welcome-img-box {
     
     overflow: hidden;
-    max-width: 100%;
+    width: 100%;
     height: auto;
     border-radius: 50%;
     position: relative;

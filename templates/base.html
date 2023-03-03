@@ -32,7 +32,7 @@
                      <a href="{% url 'home' %}" class="nav-link active">Home</a>
                   </li>
                   <li class="nav-item">
-                     <a href="#" class="nav-link">About&nbspUs</a>
+                     <a href="{% url 'about' %}" class="nav-link">About&nbspUs</a>
                   </li>
                   <li class="nav-item dropdown">
                     <!-- Drop down to see blog categories -->
@@ -40,7 +40,7 @@
                         id="dropdownMenu" role="button" data-bs-toggle="dropdown" 
                         aria-expanded="false">Blog</a>
                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-                        <li><a href="#" class="dropdown-item">All</a></li>
+                        <li><a href="{% url 'blog' %}" class="dropdown-item">All</a></li>
                         <div class="dropdown-divider"></div>
                         <li><a href="#" class="dropdown-item">City Break</a></li>
                         <li><a href="#" class="dropdown-item">Hiking</a></li>
@@ -48,7 +48,7 @@
                      </ul>
                   </li>
                   <li class="nav-item">
-                     <a href="#" class="nav-link">Contact&nbspUs</a>
+                     <a href="{% url 'contact' %}" class="nav-link">Contact&nbspUs</a>
                   </li>
                </ul>
                <ul class="navbar-nav ms-auto custom-nav">
