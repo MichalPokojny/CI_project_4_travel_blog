@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+
+
+<div class="containter">
+  <div class="row g-0">
+    <div class="col text-center " style="height: 80vh;">
+      <div class="auth">
+      <h1 class="mb-4" style="color:#111c79;">{% trans "Sign In" %}</h1>
+
+
+    <p class="mb-4">{% blocktrans %}If you have not created an account yet, then please
+    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+
+<form class="login" method="POST" action="{% url 'account_login' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a><br>
+  <button class="btn btn-secondary rounded-pill mt-4" type="submit">{% trans "Sign In" %}</button>
+</form>
+</div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
