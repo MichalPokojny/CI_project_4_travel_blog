@@ -1,5 +1,55 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<h1>Hello</h1>
+
+<div class="container">
+    
+    <div class="row g-0 mt-5">
+        <div class="col-md-6 text-center fs-5">
+            <h1 class="text-center mt-3" style="color:#111c79;">Get in touch with Us!</h1>
+            <p style="color:#d0b3b3;">We would love to hear from you! If you have any questions, comments, or suggestions, please don't hesitate to get in touch with us.
+
+                You can reach us by filling out the contact form for sending us an email. We will do our best to respond to your message within 24-48 hours.
+                
+                If you're interested in collaborating with us or have a business inquiry, please feel free to contact us as well. We're always open to new opportunities and partnerships.
+                
+                We're also active on social media, so be sure to follow us (Social links at the bottom of the page) to stay up-to-date with our latest travels and adventures.
+                
+                Thank you for your interest in our travel blog. We look forward to hearing from you soon!</p>
+        </div>
+        <div class="col-md-6 text-center mt-3">
+            <form action="#" >
+                <label for="select" class="form-label fs-4">What is this message about?</label>
+                <select id="select" class="form-select mx-auto mb-3" style="width:70%">
+                    <option>Travel</option>
+                    <option>Food recommendation</option>
+                    <option>Other</option>
+                </select>
+
+                <div class="form-floating mb-3 mx-auto" style="width:70%">
+                    <input type=text id="firstname" class="form-control" placeholder="First Name"  required>
+                    <label for="firstname" class="form-label">First Name</label>
+                 </div>
+
+                 <div class="form-floating mb-3 mx-auto" style="width:70%">
+                    <input type=text id="lasttname" class="form-control" placeholder="Last Name"  required>
+                    <label for="firstname" class="form-label">Last Name</label>
+                </div>
+
+                <div class="form-floating mb-3 mx-auto" style="width:70%">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                  
+                <div class="form-floating mx-auto" style="width:70%">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px" required></textarea>
+                    <label for="floatingTextarea">Comments</label>
+                  </div>
+
+                <button type="submit" class="btn btn-secondary rounded-pill mt-3">Send Email</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

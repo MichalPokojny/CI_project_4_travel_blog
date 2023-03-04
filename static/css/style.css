@@ -8,7 +8,7 @@
 }
 
 body {
-    background-image: linear-gradient(to bottom, #3a663a, #5c6322, #7f5a1b, #9e4c2e, #b13d54, #af3369, #a53180, #8f3899, #7d319c, #682b9f, #4c28a3, #1827a6);
+    background-image: linear-gradient(to bottom, #c3c0c4, #afa2a8, #9c8586, #856a61, #67543e, #624a2e, #5c401f, #56360f, #712a20, #821c43, #792673, #3643a3);
     font-family: 'Inconsolata', monospace;
     
 }
@@ -72,8 +72,8 @@ footer {
     display: block;
     width: 50px;
     height: 50px;
-    line-height: 50px;
-    background: #443d9d;
+    line-height: 2;
+    background: #4c4697;
     text-align: center;
     border-radius: 30%;
     transition: 0.9s;
