@@ -10,6 +10,7 @@ class Category(models.Model):
     """
     Model for Post categories
     """
+    
     title = models.CharField(max_length=30)
     image = CloudinaryField('image', default='placeholder')
 
@@ -48,7 +49,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     """
-    Model for comments on post
+    Model for comments in post
     """
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
     name = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_comment')

@@ -49,17 +49,20 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
+    'crispy_forms',
     'blog',
     'info',
 ]
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/info'
-LOGOUT_REDIRECT_URL = '/info'
-ACCOUNT_SIGNUP_REDIRECT_URL = '/info'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_SIGNUP_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_EMAIL_REQUIRED = True
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 MIDDLEWARE = [
