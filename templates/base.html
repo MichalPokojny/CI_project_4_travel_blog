@@ -29,14 +29,14 @@
                 <!-- Navigation links -->
                <ul class="navbar-nav custom-nav ">
                   <li class="nav-item">
-                     <a href="{% url 'home' %}" class="nav-link active">Home</a>
+                     <a href="{% url 'home' %}" class="nav-link {% block home %}{% endblock %}">Home</a>
                   </li>
                   <li class="nav-item">
-                     <a href="{% url 'about' %}" class="nav-link">About&nbspUs</a>
+                     <a href="{% url 'about' %}" class="nav-link {% block aboutUs %}{% endblock %}">About&nbspUs</a>
                   </li>
                   <li class="nav-item dropdown">
                     <!-- Drop down to see blog categories -->
-                     <a href="#" class="nav-link dropdown-toggle" 
+                     <a href="#" class="nav-link dropdown-toggle {% block blog %}{% endblock %}" 
                         id="dropdownMenu" role="button" data-bs-toggle="dropdown" 
                         aria-expanded="false">Blog</a>
                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
@@ -45,10 +45,15 @@
                         <li><a href="#" class="dropdown-item">City Break</a></li>
                         <li><a href="#" class="dropdown-item">Hiking</a></li>
                         <li><a href="#" class="dropdown-item">Sea & Beach</a></li>
+                        {% if user.is_staff %}
+                        <div class="dropdown-divider"></div>
+                        <li><a href="{% url 'create_post' %}" class="dropdown-item">Add a blog post</a></li>
+                        {% endif %}
+                        
                      </ul>
                   </li>
                   <li class="nav-item">
-                     <a href="{% url 'contact' %}" class="nav-link">Contact&nbspUs</a>
+                     <a href="{% url 'contact' %}" class="nav-link {% block contact %}{% endblock %}">Contact&nbspUs</a>
                   </li>
                </ul>
                <ul class="navbar-nav ms-auto custom-nav">
@@ -68,17 +73,17 @@
                   </li>
                   {% if user.is_authenticated %}
                   <li class="nav-item ">
-                     <a href="#" class="nav-link">Profile</a>
+                     <a href="#" class="nav-link {% block profile %}{% endblock %}">Profile</a>
                   </li>
                   <li class="nav-item ">
-                     <a href="{% url 'account_logout' %}" class="nav-link">Logout</a>
+                     <a href="{% url 'account_logout' %}" class="nav-link {% block logout %}{% endblock %}">Logout</a>
                   </li>
                   {% else %}
                   <li class="nav-item ">
-                     <a href="{% url 'account_signup' %}" class="nav-link">Register</a>
+                     <a href="{% url 'account_signup' %}" class="nav-link {% block register %}{% endblock %}">Register</a>
                   </li>
                   <li class="nav-item">
-                     <a href="{% url 'account_login' %}" class="nav-link">Login</a>
+                     <a href="{% url 'account_login' %}" class="nav-link {% block login %}{% endblock %}">Login</a>
                   </li>
                   {% endif %}
                </ul>
