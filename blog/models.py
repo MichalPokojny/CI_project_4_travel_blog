@@ -11,8 +11,8 @@ class Post(models.Model):
     """
     Model for blog post
     """
-    title = models.CharField(max_length=255, unique=True)
-    slug = models.SlugField(max_length=255, unique=True)
+    title = models.CharField(max_length=300, unique=True)
+    slug = models.SlugField(max_length=300, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now=True)
     excerpt = models.TextField(blank=True)
@@ -35,7 +35,8 @@ class Post(models.Model):
         return self.likes.count()
 
     def get_absolute_url(self):
-        return reverse('post_detail', args=[self.slug]) 
+        # return reverse('post_detail', args=[self.slug]) 
+        return reverse('blog') 
 
 
 class Comment(models.Model):

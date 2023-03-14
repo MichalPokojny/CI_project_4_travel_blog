@@ -1,20 +1,26 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View, ListView, CreateView
 from .models import *
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 
 class CreatePostView(CreateView):
     model = Post
+    form_class = PostForm
     template_name = 'create_post.html'
-    fields = '__all__'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    # fields = '__all__'
+    # fields = ('title', 'slug', 'featured_image', 'excerpt', 'author', 'content', 'status', 'latitude', 'longtitute')
 
 
 class PostList(ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'blog.html'
-    paginate_by = 6
+    paginate_by = 5
 
 
 class PostDetail(View):
