@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import View, ListView, CreateView, UpdateView
+from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from django.http import HttpResponseForbidden
 from .models import *
 from .forms import CommentForm, PostForm
 
@@ -12,19 +14,37 @@ class CreatePostView(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
-    # fields = '__all__'
-    # fields = ('title', 'slug', 'featured_image', 'excerpt', 'author', 'content', 'status', 'latitude', 'longtitute')
 
 
 class UpdatePostView(UpdateView):
     model = Post
     form_class = PostForm
     template_name = 'edit_post.html'
-    
+
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
-    # fields = ('title', 'slug', 'featured_image', 'excerpt', 'content', 'status', 'latitude', 'longtitute')
+    
+    def update_post(request, slug):
+        post = get_object_or_404(Post, slug=slug)
+        if request.user != post.author and not request.user.is_staff:
+            return HttpResponseForbidden()
+        if request.method == 'POST':
+            form = PostForm(request.POST, request.FILES, instance=post)
+            if form.isvalid():
+                post = form.save(commit=False)
+                post.author = request.user
+                post.save()
+                return redirect(post.get_absolute_url())
+        else:
+            form = PostForm(instance=post)
+        return render(request, 'blog/blog.html', {'form': form})            
+
+
+class DeletePostView(DeleteView):
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('blog')
 
 
 class PostList(ListView):
