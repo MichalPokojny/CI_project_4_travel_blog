@@ -23,7 +23,7 @@
                                 <a href="{% url 'post_detail' post.slug %}"><h2>{{ post.title }}</h2></a>
                             </div>
                             <div class="row mb-3">
-                                <p style="font-size: 0.8em;">{{ post.author }} | {{ post.created_on }} | {{ post.likes }}  | {{ post.comment_count }} </p>
+                                <p style="font-size: 0.8em;">{{ post.author }} | {{ post.created_on }} | {{ post.likes }}  | {{ post.comment_count }} | <a href="{% url 'update_post' post.slug %}">(Update)</a> </p>
                             </div>
                             <div class="row">
                                 <p>{{ post.excerpt }} <a href="{% url 'post_detail' post.slug %}">Read More</a> </p> 

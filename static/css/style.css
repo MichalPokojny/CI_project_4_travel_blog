@@ -11,6 +11,13 @@ body {
     background-image: linear-gradient(to bottom, #c3c0c4, #afa2a8, #9c8586, #856a61, #67543e, #624a2e, #5c401f, #56360f, #712a20, #821c43, #792673, #3643a3);
     font-family: 'Inconsolata', monospace;   
 }
+a {
+    color:#08137a;
+    text-decoration: none;
+}
+a:hover {
+    color: #d0b3b3;
+}
 
 ol, ul {
     list-style: none;

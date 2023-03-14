@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import View, ListView, CreateView
+from django.views.generic import View, ListView, CreateView, UpdateView
 from .models import *
 from .forms import CommentForm, PostForm
 
@@ -14,6 +14,17 @@ class CreatePostView(CreateView):
         return super().form_valid(form)
     # fields = '__all__'
     # fields = ('title', 'slug', 'featured_image', 'excerpt', 'author', 'content', 'status', 'latitude', 'longtitute')
+
+
+class UpdatePostView(UpdateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'edit_post.html'
+    
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    # fields = ('title', 'slug', 'featured_image', 'excerpt', 'content', 'status', 'latitude', 'longtitute')
 
 
 class PostList(ListView):

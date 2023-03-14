@@ -13,7 +13,7 @@
     </div>
     
     <div class="row g-0 mb-3 text-center">
-        <p style="font-size: 0.8em;">{{ post.author }} | {{ post.created_on }} | {{ post.likes }}  | {{ post.comment_count }} </p>
+        <p style="font-size: 0.8em;">{{ post.author }} | {{ post.created_on }} | {{ post.likes }}  | {{ post.comment_count }} | <a href="{% url 'update_post' post.slug %}">(Update)</a></p>
     </div>
     <div class="welcome-box">
     <div class="row g-0 mb-3">
