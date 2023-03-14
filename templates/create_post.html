@@ -3,7 +3,7 @@
 {% load static %}
 {% block blog %}active{% endblock %}
 {% block content %}
-
+{% if user.is_authenticated %}
 <div class="container mt-5">
     <div class="row g-0">
         <div class="col-md-6 offset-md-3 postform-box" style="box-shadow: 0 0 50px #000;">
@@ -21,5 +21,10 @@
         </div>
     </div>
 </div>
+{% else %}
+<div class="containter" style="height:85vh;">
+<h1 class="text-center mt-5">Not allowed!</h1>
+</div>
+{% endif %}
 
 {% endblock %}

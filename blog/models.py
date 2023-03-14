@@ -8,6 +8,16 @@ from django.urls import reverse
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self): 
+        return reverse('blog')     
+
+
 class Post(models.Model):
     """
     Model for blog post
@@ -18,6 +28,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     excerpt = models.TextField(blank=True)
     content = models.TextField()
+    category = models.CharField(max_length=255, default='travel')
     featured_image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
@@ -39,8 +50,7 @@ class Post(models.Model):
         self.slug = slugify(self.title.replace(' ', '-'))
         super(Post, self).save(*args, **kwargs) 
 
-    def get_absolute_url(self):
-        # return reverse('post_detail', args=[self.slug]) 
+    def get_absolute_url(self): 
         return reverse('blog') 
 
 
