@@ -206,8 +206,8 @@ footer {
 
 .postform-box{
     
-    /* margin-top: 5px; */
-    
+    margin: 0 auto;
+    width: fit-content;
     background-color: #00000046;
     color: #d0b3b3;
     border-radius: 0.5%;
