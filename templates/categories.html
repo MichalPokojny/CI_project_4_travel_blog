@@ -2,14 +2,14 @@
 {% load static %}
 {% block blog %}active{% endblock %}
 {% block content %}
-
+{% if category_posts %}
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt3 left"> 
-            <h1 class="text-center mt-4 mb-4" style="color:#111c79;">Out recent travel highlights</h1>
+            <h1 class="text-center mt-4 mb-4" style="color:#111c79;">Category: {{ cat }}</h1>
             <div class="container">
             <div class="row g-0">
-                {% for post in object_list %}
+                {% for post in category_posts %}
                 <div class="welcome-box mb-4 p-2" style="box-shadow: 0 0 50px #000;">
                     <div class="row">
                         <div class="col-md-4">
@@ -24,7 +24,7 @@
                             </div>
                             <div class="row mb-3">
                                 <p style="font-size: 0.8em;">
-                                    {{ post.author }} | {{ post.created_on }} | <a href="{% url 'category' post.category %}">{{ post.category }} </a>| {{ post.likes }}  | {{ post.comment_count }} {% if request.user == post.author or request.user.is_superuser %} | 
+                                    {{ post.author }} | {{ post.created_on }} | {{ post.category }} | {{ post.likes }}  | {{ post.comment_count }} {% if request.user == post.author or request.user.is_superuser %} | 
                                     <a href="{% url 'update_post' post.slug %}">(Update)</a> <a href="{% url 'delete_post' post.slug %}"> (Delete)</a>{% endif %}</p>
                             </div>
                             <div class="row">
@@ -48,5 +48,9 @@
         </div>
     </div>
 </div>
-
+{% else %}
+<div class="containter" style="height:85vh;">
+    <h1 class="text-center mt-5">Not existing page!</h1>
+</div>
+{% endif %}
 {% endblock %}

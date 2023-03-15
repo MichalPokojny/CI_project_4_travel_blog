@@ -6,6 +6,11 @@ from .models import *
 from .forms import CommentForm, PostForm
 
 
+def CategoryView(request, cat):
+    category_posts = Post.objects.filter(category=cat)
+    return render(request, 'categories.html', {'cat': cat, 'category_posts': category_posts})
+
+
 class CreatePostView(CreateView):
     model = Post
     form_class = PostForm
@@ -51,6 +56,7 @@ class PostList(ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'blog.html'
+    cat = Category.objects.all()
     paginate_by = 5
 
 

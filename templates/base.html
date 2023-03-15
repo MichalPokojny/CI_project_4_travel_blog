@@ -42,9 +42,11 @@
                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
                         <li><a href="{% url 'blog' %}" class="dropdown-item">All</a></li>
                         <div class="dropdown-divider"></div>
-                        <li><a href="#" class="dropdown-item">City Break</a></li>
-                        <li><a href="#" class="dropdown-item">Hiking</a></li>
-                        <li><a href="#" class="dropdown-item">Sea & Beach</a></li>
+                        {% if cat_items %}
+                        {% for item in cat_items %}
+                        <li><a href="{% url 'category' item %}" class="dropdown-item">{{ item }}</a></li>
+                        {% endfor %}
+                        {% endif %}
                         {% if user.is_staff %}
                         <div class="dropdown-divider"></div>
                         <li><a href="{% url 'create_post' %}" class="dropdown-item">Add a blog post</a></li>

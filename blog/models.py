@@ -28,7 +28,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     excerpt = models.TextField(blank=True)
     content = models.TextField()
-    category = models.CharField(max_length=255, default='travel')
+    category = models.CharField(max_length=255, default='Travel')
     featured_image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
