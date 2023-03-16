@@ -33,7 +33,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-    comment_count = models.IntegerField(default=0)
+    
     latitude = models.DecimalField(max_digits=22, decimal_places=6, default=0)
     longtitute = models.DecimalField(max_digits=22, decimal_places=6, default=0)
 

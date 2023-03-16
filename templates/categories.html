@@ -24,7 +24,7 @@
                             </div>
                             <div class="row mb-3">
                                 <p style="font-size: 0.8em;">
-                                    {{ post.author }} | {{ post.created_on }} | {{ post.category }} | {{ post.likes }}  | {{ post.comment_count }} {% if request.user == post.author or request.user.is_superuser %} | 
+                                    {{ post.author }} | {{ post.created_on }} | {{ post.category }} |  <i class="fas fa-heart"></i> {{ post.number_of_likes }}  | <i class="fa-regular fa-comment"></i> {{ post.comment_count }}  {% if request.user == post.author or request.user.is_superuser %} | 
                                     <a href="{% url 'update_post' post.slug %}">(Update)</a> <a href="{% url 'delete_post' post.slug %}"> (Delete)</a>{% endif %}</p>
                             </div>
                             <div class="row">

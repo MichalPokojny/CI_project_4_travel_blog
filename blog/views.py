@@ -2,12 +2,14 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.http import HttpResponseForbidden, HttpResponseRedirect
+from django.db.models import Count
 from .models import *
 from .forms import CommentForm, PostForm
 
 
 def CategoryView(request, cat):
-    category_posts = Post.objects.filter(category=cat)
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    category_posts = Post.objects.filter(category=cat).annotate(comment_count=Count('comments'))
     return render(request, 'categories.html', {'cat': cat, 'category_posts': category_posts})
 
 
@@ -54,7 +56,7 @@ class DeletePostView(DeleteView):
 
 class PostList(ListView):
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    queryset = Post.objects.filter(status=1).order_by('-created_on').annotate(comment_count=Count('comments'))
     template_name = 'blog.html'
     cat = Category.objects.all()
     paginate_by = 5
@@ -75,7 +77,7 @@ class PostLike(View):
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
+        queryset = Post.objects.filter(status=1).annotate(comment_count=Count('comments'))
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True)
         liked = False
@@ -95,7 +97,7 @@ class PostDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
+        queryset = Post.objects.filter(status=1).annotate(comment_count=Count('comments'))
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True)
         liked = False
