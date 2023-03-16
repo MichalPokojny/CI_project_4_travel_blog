@@ -18,7 +18,7 @@ class CommentForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'featured_image', 'category',  'excerpt', 'content', 'status', 'latitude', 'longtitute')
+        fields = ('title', 'featured_image', 'category',  'excerpt', 'content', 'status', 'latitude', 'longtitute',)
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),

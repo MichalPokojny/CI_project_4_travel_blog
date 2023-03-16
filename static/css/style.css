@@ -254,3 +254,8 @@ footer {
     width: 90%;
     background-color: #0000004f;
 }
+
+.comment {
+    width: fit-content;
+    background-color: #ec080861;
+}

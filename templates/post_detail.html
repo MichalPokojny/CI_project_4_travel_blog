@@ -13,7 +13,7 @@
     </div>
     
     <div class="row g-0 mb-3 text-center">
-        <p style="font-size: 0.8em;">{{ post.author }} | {{ post.created_on }} | {{ post.category }} | {{ post.likes }}  | {{ post.comment_count }} {% if request.user == post.author or request.user.is_superuser %} | 
+        <p style="font-size: 0.8em;">{{ post.author }} | {{ post.created_on }} | {{ post.category }} | <i class="fas fa-heart"></i> {{ post.number_of_likes }}  | {{ post.comment_count }} {% if request.user == post.author or request.user.is_superuser %} | 
             <a href="{% url 'update_post' post.slug %}">(Update)</a> <a href="{% url 'delete_post' post.slug %}"> (Delete)</a>{% endif %}</p>
     </div>
     <div class="welcome-box">
@@ -27,28 +27,36 @@
         <div class="col-md-5 p-5">
             <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677884179/static/carousel-image/person-back2_fyzq4e.jpg" style="width:350px; height:350px">
         </div>
+        {% if user.is_authenticated %}
+        <div class="row g-0">
+            <form action="{% url 'blog_likes' post.slug %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" name="post_id" value="{{ post.slug }}" class="btn btn-secondary rounded-pill m-3">Like</button>
+            </form>
+        </div>
+        {% endif %}
         <div class="row g-0">
             <h1 class="text-center">Comments</h1>
         </div>
         {% for comment in comments %}
-        <div class="row g-0">
-            {{ comment.name }} | {{ comment.created_on }} {{ comment.body | linebreaks }}
+        <div class="row g-0 m-5" style="width: fit-content; background-color: #c5c5c56c;">
+            {{ comment.name }} | {{ comment.created_on }} <hr>{{ comment.body | linebreaks }}
         </div>
         {% endfor %}
         {% if commented %}
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-success" role="alert" style="width: fit-content; margin: 25px auto;">
             Your comment is awaiting for approval
         </div>
         {% else %}
-        <div class="row g-0">
+        <div class="row g-0 m-5">
             {% if user.is_authenticated %}
 
             <h3>Leave a comment:</h3>
             <p>Posting as: {{ user.username }}</p>
-            <form method="post" style="width: 50%;" class="text-center mx-auto">
+            <form method="post" style="width: 40%;">
                 {{ comment_form | crispy }}
                 {% csrf_token %}
-                <button type="submit" class="btn">Submit</button>
+                <button type="submit" class="btn btn-secondary rounded-pill mt-3">Submit</button>
             </form>
             {% endif %}
             {% endif %}
