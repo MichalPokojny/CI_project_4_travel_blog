@@ -13,7 +13,7 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body',)
-
+        
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -30,3 +30,8 @@ class PostForm(forms.ModelForm):
             'latitude': forms.NumberInput(attrs={'class': 'form-control'}),
             'longtitute': forms.NumberInput(attrs={'class': 'form-control'})
         }
+
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.fields['featured_image'].widget.attrs.update({'accept': 'image/*'})
+            self.fields['featured_image'].widget.attrs.update({'enctype': 'multipart/form-data'})
