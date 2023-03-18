@@ -2,25 +2,32 @@
 {% load static %}
 {% block contact %}active{% endblock %}
 {% block content %}
+{% block scripts %}
+<!-- emailJS scripts -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        emailjs.init("HzsXzBRLy5Ms02FWp");
+      })();
+</script>
+{% endblock %}
 
 <div class="container">
-    
+    <!-- Contact page with email form connected through EmailJS -->
     <div class="row g-0 mt-5" >
         <div class="col-md-6 text-center fs-4">
+          <!-- Contact text -->
             <h1 class="text-center mt-3" style="color:#111c79;">Get in touch with Us!</h1>
             <p style="color:#d0b3b3;">We would love to hear from you! If you have any questions, comments, or suggestions, please don't hesitate to get in touch with us.
-
                 You can reach us by filling out the contact form for sending us an email. We will do our best to respond to your message within 24-48 hours.
-                
-                If you're interested in collaborating with us or have a business inquiry, please feel free to contact us as well. We're always open to new opportunities and partnerships.
-                
+                If you're interested in collaborating with us or have a business inquiry, please feel free to contact us as well. We're always open to new opportunities and partnerships. 
                 We're also active on social media, so be sure to follow us (Social links at the bottom of the page) to stay up-to-date with our latest travels and adventures.
-                
                 Thank you for your interest in our travel blog. We look forward to hearing from you soon!</p>
         </div>
-        <div class="col-md-6 text-center mt-3">
+        <div class="col-md-6 text-center mt-5">
+          <!-- Contact email form -->
             <form action="#" >
-                <div class="form-floating mb-4 mx-auto" style="width:70%">
+                <div class="form-floating mb-4 mt-5  mx-auto" style="width:70%">
                     <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
                       <option value="1">Travel</option>
                       <option value="2">Food recommendation</option>

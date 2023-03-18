@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -14,6 +13,7 @@
       <link href="{% static 'css/style.css' %}" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <title>Adventurous travel blog</title>
+      {% block scripts %}{% endblock %}
    </head>
    <body>
       <header>
