@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 {% block contact %}active{% endblock %}
-{% block content %}
 {% block scripts %}
 <!-- emailJS scripts -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -11,6 +10,8 @@
       })();
 </script>
 {% endblock %}
+{% block content %}
+
 
 <div class="container">
     <!-- Contact page with email form connected through EmailJS -->
@@ -26,7 +27,7 @@
         </div>
         <div class="col-md-6 text-center mt-5">
           <!-- Contact email form -->
-            <form action="#" >
+            <form onsubmit="return sendMail(this);" >
                 <div class="form-floating mb-4 mt-5  mx-auto" style="width:70%">
                     <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
                       <option value="1">Travel</option>
@@ -42,8 +43,8 @@
                  </div>
 
                  <div class="form-floating mb-4 mx-auto" style="width:70%">
-                    <input type=text id="lasttname" class="form-control" placeholder="Last Name"  required>
-                    <label for="firstname" class="form-label">Last Name</label>
+                    <input type=text id="lastname" class="form-control" placeholder="Last Name"  required>
+                    <label for="lastname" class="form-label">Last Name</label>
                 </div>
 
                 <div class="form-floating mb-4 mx-auto" style="width:70%">

@@ -1,14 +1,17 @@
 function sendMail(contactForm) {
     emailjs.send("gmail", "Michal", {
-        "from_name": contactForm.name.value,
-        "from_email": contactForm.emailaddress.value,
-        "email_enquiry": contactForm.infoenquiry.value
+
+        "email_enquiry" : contactForm.floatingSelect.value,
+        "from_name": contactForm.firstname.value,
+        "last_name": contactForm.lastname.value,
+        "from_email": contactForm.floatingInput.value,
+        "comment": contactForm.floatingTextarea.value,
     })
     .then(
         function(response) {
             console.log("SUCCESS", response);
-            alert(`Thank you ${contactForm.name.value}, your email has been sent!`);
-            location.reload()
+            alert(`Thank you ${contactForm.firstname.value}, your email has been sent!`);
+            location.reload();
         },
         function(error) {
             console.log("FAILED", error);
