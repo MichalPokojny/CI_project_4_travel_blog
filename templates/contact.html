@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 {% block contact %}active{% endblock %}
-{% block scripts %}
+{% block emailScriptHead %}
 <!-- emailJS scripts -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
       (function() {
-        emailjs.init("HzsXzBRLy5Ms02FWp");
+        emailjs.init("{{API_KEY}}");
       })();
 </script>
 {% endblock %}
@@ -63,4 +63,7 @@
     </div>
 </div>
 
+{% endblock %}
+{% block emailScriptFooter %}
+<script src="{% static 'js/email.js' %}"></script>
 {% endblock %}
