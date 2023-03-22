@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+<div class="containter">
+  <div class="row g-0">
+    <div class="col text-center" style="height: 80vh;">
+      <div class="auth">
+        <h2>Profile</h2>
+        <div class="container">
+          <h1>{{ user.username }}</h1>
+          <h1>{{ user.email }}</h1>
+          {% for post in posts %}
+          <h4>{{ post.title }}</h4> <a href="{% url 'update_post' post.slug %}">(Update)</a> <a href="{% url 'delete_post' post.slug %}"> (Delete)</a></p>
+          {% endfor %}
+        </div>
+        
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

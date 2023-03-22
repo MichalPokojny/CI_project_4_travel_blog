@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.utils.text import slugify
 from django.urls import reverse
-from django_google_maps import fields as map_fields
 
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
@@ -35,9 +34,6 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     
-    address = map_fields.AddressField(max_length=200)
-    geolocation = map_fields.GeoLocationField(blank=True, null=True)
-
     class Meta:
         ordering = ['-created_on']
 
@@ -72,3 +68,10 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
 
+
+class Profile(models.Model):
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.user.username} Profile'

@@ -5,6 +5,8 @@ from django.http import HttpResponseForbidden, HttpResponseRedirect
 from django.db.models import Count
 from .models import *
 from .forms import CommentForm, PostForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 
 def CategoryView(request, cat):
@@ -126,3 +128,12 @@ class PostDetail(View):
                 "liked": liked,            
             },
         )
+
+
+@login_required
+def profile_view(request):
+
+    user = get_object_or_404(User, username=request.user.username)
+    posts = Post.objects.filter(author=user)
+    context = {'user': user, 'posts': posts}
+    return render(request, 'profile.html', context)
