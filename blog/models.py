@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.utils.text import slugify
 from django.urls import reverse
+from django_google_maps import fields as map_fields
 
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
@@ -34,8 +35,8 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     
-    latitude = models.DecimalField(max_digits=22, decimal_places=6, default=0)
-    longtitute = models.DecimalField(max_digits=22, decimal_places=6, default=0)
+    address = map_fields.AddressField(max_length=200)
+    geolocation = map_fields.GeoLocationField(blank=True, null=True)
 
     class Meta:
         ordering = ['-created_on']

@@ -18,7 +18,7 @@ class CommentForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'featured_image', 'category',  'excerpt', 'content', 'status', 'latitude', 'longtitute',)
+        fields = ('title', 'featured_image', 'category',  'excerpt', 'content', 'status',)
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
@@ -27,8 +27,7 @@ class PostForm(forms.ModelForm):
             'excerpt': forms.TextInput(attrs={'class': 'form-control'}),
             'content': SummernoteWidget(attrs={'class': 'form-control'}),
             'status': forms.Select(attrs={'class': 'form-select'}),
-            'latitude': forms.NumberInput(attrs={'class': 'form-control'}),
-            'longtitute': forms.NumberInput(attrs={'class': 'form-control'})
+            
         }
 
         def __init__(self, *args, **kwargs):
