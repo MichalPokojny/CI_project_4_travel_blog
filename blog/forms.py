@@ -1,4 +1,4 @@
-from .models import Comment, Post, Category
+from .models import Comment, Post, Category, User
 from django import forms
 from django_summernote.widgets import SummernoteWidget
 
@@ -34,3 +34,12 @@ class PostForm(forms.ModelForm):
             super().__init__(*args, **kwargs)
             self.fields['featured_image'].widget.attrs.update({'accept': 'image/*'})
             self.fields['featured_image'].widget.attrs.update({'enctype': 'multipart/form-data'})
+
+
+class UserUpdateForm(forms.ModelForm):
+
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields = ['username', 'email']            

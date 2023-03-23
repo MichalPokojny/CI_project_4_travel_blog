@@ -4,9 +4,10 @@ from django.urls import reverse_lazy
 from django.http import HttpResponseForbidden, HttpResponseRedirect
 from django.db.models import Count
 from .models import *
-from .forms import CommentForm, PostForm
+from .forms import CommentForm, PostForm, UserUpdateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 
 def CategoryView(request, cat):
@@ -135,5 +136,16 @@ def profile_view(request):
 
     user = get_object_or_404(User, username=request.user.username)
     posts = Post.objects.filter(author=user)
-    context = {'user': user, 'posts': posts}
+    form = UserUpdateForm(instance=request.user)
+
+    if request.method == 'POST':
+        form = UserUpdateForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your profile has been updated successfully!')
+            return HttpResponseRedirect(reverse(profile_view))
+        else:
+            form = UserUpdateForm(instance=request.user)
+    context = {'user': user, 'posts': posts, 'form': form}
+
     return render(request, 'profile.html', context)

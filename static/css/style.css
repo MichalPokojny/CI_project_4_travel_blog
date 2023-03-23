@@ -9,7 +9,10 @@
 
 body {
     background-image: linear-gradient(to bottom, #c3c0c4, #afa2a8, #9c8586, #856a61, #67543e, #624a2e, #5c401f, #56360f, #712a20, #821c43, #792673, #3643a3);
-    font-family: 'Inconsolata', monospace;   
+    font-family: 'Inconsolata', monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 a {
     color:#08137a;
@@ -23,11 +26,10 @@ ol, ul {
     list-style: none;
 }
 
+.main-content {
+    flex: 1;
+}
 
-
-/* .row {
-    --bs-gutter-x: 0;
-} */
 
 /*---- Navigation Bar ----*/
 
@@ -57,12 +59,6 @@ ol, ul {
     transition: 0.9s;
 }
 
-/* .show {
-    
-    border-radius: 5%;
-    background-color: rgba(255, 255, 255, 0.02);
-    
-} */
 
 /*---- Footer ----*/
 
