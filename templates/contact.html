@@ -1,9 +1,14 @@
+<!-- Extend base html and load static files -->
 {% extends "base.html" %}
 {% load static %}
+<!-- Set blog link in the navbar active -->
 {% block contact %}active{% endblock %}
+
 {% block emailScriptHead %}
 <!-- emailJS scripts -->
+<!-- Load emailJs library -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Initialize emailJS using API key from settings.py -->
     <script type="text/javascript">
       (function() {
         emailjs.init("{{API_KEY}}");
@@ -29,6 +34,7 @@
           <!-- Contact email form -->
             <form onsubmit="return sendMail(this);" >
                 <div class="form-floating mb-4 mt-5  mx-auto" style="width:70%">
+                  <!-- Dropdown menu to selecet message topic -->
                     <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
                       <option value="Travel">Travel</option>
                       <option value="Food recommendation">Food recommendation</option>
@@ -36,7 +42,7 @@
                     </select>
                     <label for="form-label">What is this message about?</label>
                   </div>
-
+                  <!-- Inout field for first and last name -->
                 <div class="form-floating mb-4 mx-auto" style="width:70%">
                     <input type=text id="firstname" class="form-control" placeholder="First Name"  required>
                     <label for="firstname" class="form-label">First Name</label>
@@ -46,17 +52,16 @@
                     <input type=text id="lastname" class="form-control" placeholder="Last Name"  required>
                     <label for="lastname" class="form-label">Last Name</label>
                 </div>
-
+                  <!-- Email address -->
                 <div class="form-floating mb-4 mx-auto" style="width:70%">
                     <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
                     <label for="floatingInput">Email address</label>
                   </div>
-                  
+                  <!-- Text are for message content -->
                 <div class="form-floating mb-4 mx-auto" style="width:70%">
                     <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 200px" required></textarea>
                     <label for="floatingTextarea">Comments</label>
                   </div>
-
                 <button type="submit" class="btn btn-secondary rounded-pill mt-3">Send Email</button>
             </form>
         </div>
@@ -64,6 +69,7 @@
 </div>
 
 {% endblock %}
+<!-- load email script -->
 {% block emailScriptFooter %}
 <script src="{% static 'js/email.js' %}"></script>
 {% endblock %}
