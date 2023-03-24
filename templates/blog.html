@@ -1,18 +1,22 @@
+<!-- Extend base html and load static files -->
 {% extends "base.html" %}
 {% load static %}
+<!-- Set blog link in the navbar active -->
 {% block blog %}active{% endblock %}
 {% block content %}
-
+<!-- Blog posts content -->
 <div class="container-fluid">
     <div class="row g-0">
         <div class="col-12 mt-3 left"> 
-            <h1 class="text-center mt-4 mb-4" style="color:#111c79;">Our recent travel highlights</h1>
+            <h1 class="text-center mt-4 mb-4 font-blue">Our recent travel highlights</h1>
             <div class="container">
             <div class="row g-0">
+                <!-- Loop through the list of posts -->
                 {% for post in object_list %}
                 <div class="welcome-box mb-4 p-2" style="box-shadow: 0 0 50px #000;">
                     <div class="row">
                         <div class="col-md-4">
+                            <!-- Display featured image of post, or default one if dont have any -->
                             {% if "placeholder" in post.featured_image.url %}
                             <a href="{% url 'post_detail' post.slug %}"><img src="https://c.pxhere.com/photos/3f/47/travel_journal_camera_map_notebook-120138.jpg!d" srcset="https://c.pxhere.com/photos/3f/47/travel_journal_camera_map_notebook-120138.jpg!d" alt="notebook, camera, travel" style="width:100%; height:100%;"></a>
                             {% else %}
@@ -20,36 +24,35 @@
                             {% endif %}
                         </div>
                         <div class="col-md-8">
-                            <div class="row">
-                               <!-- <p>  Category here</p> -->
-                            </div>
                             <div class="row mb-3">
+                                <!-- Display title of the post with the active link to its detail page-->
                                 <a href="{% url 'post_detail' post.slug %}"><h2>{{ post.title }}</h2></a>
                             </div>
                             <div class="row mb-3">
+                                <!-- Display the author, date created, category, number of likes, number of comments of the post-->
                                 <p style="font-size: 0.8em;">
                                     {{ post.author }} | {{ post.created_on }} | 
                                     <a href="{% url 'category' post.category %}">{{ post.category }} </a>| <i class="fas fa-heart"></i> {{ post.number_of_likes }}  | <i class="fa-regular fa-comment"></i> {{ post.comment_count }} 
+                                    <!-- Display links to update or delete the post if the user is its author or superuser -->
                                     {% if request.user == post.author or request.user.is_superuser %} | 
                                     <a href="{% url 'update_post' post.slug %}">(Update)</a> <a href="{% url 'delete_post' post.slug %}"> (Delete)</a>{% endif %}</p>
                             </div>
                             <div class="row">
+                                <!-- Display the excerpt of the post, with the link to the post detail -->
                                 <p>{{ post.excerpt }} <a href="{% url 'post_detail' post.slug %}">Read More</a> </p> 
                             </div>
-                            
                         </div>
                     </div>
                 </div>    
-            
-
+                <!-- Close the container and row every 5th post -->
                 {% if forloop.counter|divisibleby:5 %}
-                
             </div>
             </div> 
 
                 {% endif %}
                 {% endfor %}
                 <div class="container">
+                    <!-- Pagination with buttons to the previous or next page -->
                 {% if is_paginated %}
                 {% if page_obj.has_previous %}
                 <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-secondary rounded-pill mt-3 float-start">&laquo; PREV</a>
