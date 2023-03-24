@@ -10,10 +10,25 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 
 
-def CategoryView(request, cat):
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
-    category_posts = Post.objects.filter(category=cat).annotate(comment_count=Count('comments'))
-    return render(request, 'categories.html', {'cat': cat, 'category_posts': category_posts})
+# def CategoryView(request, cat):
+   
+#     category_posts = Post.objects.filter(category=cat, status=1).order_by('-created_on').annotate(comment_count=Count('comments'))
+#     return render(request, 'categories.html', {'cat': cat, 'category_posts': category_posts})
+
+class CategoryView(ListView):
+    model = Post
+    template_name = 'categories.html'
+    context_object_name = 'category_posts'
+    paginate_by = 5
+
+    def get_queryset(self):
+        cat = self.kwargs['cat']
+        return Post.objects.filter(category=cat, status=1).order_by('-created_on').annotate(comment_count=Count('comments'))
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['cat'] = self.kwargs['cat']
+        return context   
 
 
 class CreatePostView(CreateView):
