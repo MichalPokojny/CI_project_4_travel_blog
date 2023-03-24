@@ -1,7 +1,10 @@
+<!-- Extending from base template and load static files-->
 {% extends "base.html" %}
 {% load static %}
+<!-- Set the Abbout Us link active in the navbar -->
 {% block aboutUs %}active{% endblock %}
 {% block content %}
+<!-- About us page content -->
 <div class="container">
     <h1 class="text-center mt-4 font-blue">Something about Us</h1>
     <div class="row g-0 mt-5">
@@ -25,8 +28,7 @@
             <p class="font-pink">On our blog, you'll find travel guides, tips,
              and stories from our own experiences. Whether you're a seasoned traveler or
               just starting out, we hope our blog will be a valuable resource for you.
-
-            Thank you for joining us on this journey. We can't wait to share our adventures with you!
+             Thank you for joining us on this journey. We can't wait to share our adventures with you!
         </p>
         </div>
         
