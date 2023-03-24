@@ -1,11 +1,15 @@
+<!-- Extend base html and load static files -->
 {% extends "base.html" %}
-
 {% load static %}
+<!-- Set blog link in the navbar active -->
 {% block blog %}active{% endblock %}
+
 {% block content %}
+<!-- Check if the user is authenticated and is the author of the post or superuser -->
 {% if request.user == post.author or request.user.is_superuser %}
 <div class="container mt-5">
     <div class="row g-0">
+        <!-- Display post title and message to confirm deletion -->
         <div class="postform-box" style="box-shadow: 0 0 50px #000;">
         <h1 class="text-center"><span class="font-blue">Delete:</span> {{ post.title }}</h1>
             <h4 class="text-center mt-5">Are you sure ?</h4>
@@ -22,6 +26,7 @@
         </div>
     </div>
 </div>
+<!-- Display if the user is not authorized to delete the post -->
 {% else %}
 <div class="containter" style="height:85vh;">
 <h1 class="text-center mt-5">Not allowed!</h1>
