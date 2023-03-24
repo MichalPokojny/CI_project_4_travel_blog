@@ -1,18 +1,25 @@
+<!-- Extend base html and load static files -->
 {% extends "base.html" %}
 {% load static %}
+<!-- Set blog link in the navbar active -->
 {% block blog %}active{% endblock %}
+
 {% block content %}
+<!-- Check if there a posts in the category -->
 {% if category_posts %}
+<!-- Container with the printed posts -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt3 left"> 
             <h1 class="text-center mt-4 mb-4" style="color:#111c79;">Category: {{ cat }}</h1>
             <div class="container">
             <div class="row g-0">
+                <!-- Loop through each post in  the selected category -->
                 {% for post in category_posts %}
                 <div class="welcome-box mb-4 p-2" style="box-shadow: 0 0 50px #000;">
                     <div class="row">
                         <div class="col-md-4">
+                            <!-- If the post has image, if not show default -->
                             {% if "placeholder" in post.featured_image.url %}
                             <a href="{% url 'post_detail' post.slug %}"><img src="https://c.pxhere.com/photos/3f/47/travel_journal_camera_map_notebook-120138.jpg!d" srcset="https://c.pxhere.com/photos/3f/47/travel_journal_camera_map_notebook-120138.jpg!d" alt="notebook, camera, travel" style="width:100%; height:100%;"></a>
                             {% else %}
@@ -20,15 +27,15 @@
                             {% endif %}
                         </div>
                         <div class="col-md-8">
-                            <div class="row">
-                               <!-- <p>  Category here</p> -->
-                            </div>
                             <div class="row mb-3">
                                 <a href="{% url 'post_detail' post.slug %}"><h2>{{ post.title }}</h2></a>
                             </div>
                             <div class="row mb-3">
+                                <!-- Post details -->
                                 <p style="font-size: 0.8em;">
-                                    {{ post.author }} | {{ post.created_on }} | {{ post.category }} |  <i class="fas fa-heart"></i> {{ post.number_of_likes }}  | <i class="fa-regular fa-comment"></i> {{ post.comment_count }}  {% if request.user == post.author or request.user.is_superuser %} | 
+                                    {{ post.author }} | {{ post.created_on }} | {{ post.category }} |  <i class="fas fa-heart"></i> {{ post.number_of_likes }}  | <i class="fa-regular fa-comment"></i> {{ post.comment_count }} 
+                                    <!-- Show links to delete or update post if author or superuser -->
+                                    {% if request.user == post.author or request.user.is_superuser %} | 
                                     <a href="{% url 'update_post' post.slug %}">(Update)</a> <a href="{% url 'delete_post' post.slug %}"> (Delete)</a>{% endif %}</p>
                             </div>
                             <div class="row">
@@ -38,14 +45,12 @@
                         </div>
                     </div>
                 </div>    
-            
-
+                <!-- Check if the loop is divisivble by 5 -->
                 {% if forloop.counter|divisibleby:5 %}
-            
-            
                 {% endif %}
                 {% endfor %}
                 <div class="container">
+                    <!-- Pagination with button to next or previous page -->
                     {% if is_paginated %}
                     {% if page_obj.has_previous %}
                     <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-secondary rounded-pill mt-3 float-start">&laquo; PREV</a>
@@ -61,9 +66,10 @@
         </div>
     </div>
 </div>
+<!-- If no post exists in the category show message -->
 {% else %}
 <div class="containter" style="height:85vh;">
-    <h1 class="text-center mt-5">Not existing page!</h1>
+    <h1 class="text-center mt-5">No posts yet in this category!</h1>
 </div>
 {% endif %}
 {% endblock %}
