@@ -62,11 +62,12 @@
                   <li class="nav-item">
                     <!-- Search collapse button -->
                      <div class="btn-group">
-                        <a role="button" class="dropdown-toggle nav-link" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                        <a role="button" class="dropdown-toggle nav-link{% block search %}{% endblock %}" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-lg-end" style="width:300px;">
-                           <form class="d-flex">
+                           <form class="d-flex" method="POST" action="{% url 'search_posts' %}">
+                              {% csrf_token %}
                               <input type="search" class="form-control ms-1 me-1" placeholder="Search" aria-label="search">
                               <button type="submit" class="btn btn-outline-secondary me-1" style="color:#111c79; font-weight: bold;" >Search</button>
                            </form>

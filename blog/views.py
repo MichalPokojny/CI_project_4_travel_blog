@@ -10,10 +10,10 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 
 
-# def CategoryView(request, cat):
-   
-#     category_posts = Post.objects.filter(category=cat, status=1).order_by('-created_on').annotate(comment_count=Count('comments'))
-#     return render(request, 'categories.html', {'cat': cat, 'category_posts': category_posts})
+def search_posts(request):
+
+    return render(request, 'search_posts.html', {})
+
 
 class CategoryView(ListView):
     model = Post
