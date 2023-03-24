@@ -1,20 +1,26 @@
+<!-- Extend base html and load static files -->
 {% extends "base.html" %}
 {% load static %}
+<!-- Set search link in the navbar active -->
 {% block search %}active{% endblock %}
+
 {% block content %}
 
 <div class="container-fluid">
     <div class="row g-0">
       <div class="col-12 mt-3 left">
+        <!-- display searched query -->
             {% if searched %}
-            <h1 class="text-center mt-4 mb-4" style="color:#111c79;">You searched for: {{ searched }}</h1>
+            <h1 class="text-center mt-4 mb-4 font-blue">You searched for: <span class="font-pink">{{ searched }}</span></h1>
             {% if posts %}
             <div class="container">
                 <div class="row g-0">
+                    <!-- display each post searched -->
                 {% for post in posts%}
                 <div class="welcome-box mb-4 p-2" style="box-shadow: 0 0 50px #000;">
                     <div class="row">
                         <div class="col-md-4">
+                            <!-- Display featured image of post, or default one if dont have any -->
                             {% if "placeholder" in post.featured_image.url %}
                             <a href="{% url 'post_detail' post.slug %}"><img src="https://c.pxhere.com/photos/3f/47/travel_journal_camera_map_notebook-120138.jpg!d" srcset="https://c.pxhere.com/photos/3f/47/travel_journal_camera_map_notebook-120138.jpg!d" alt="notebook, camera, travel" style="width:100%; height:100%;"></a>
                             {% else %}
@@ -29,8 +35,12 @@
                                 <p style="font-size: 0.8em;">
                                     {{ post.author }} | {{ post.created_on }} | 
                                     <a href="{% url 'category' post.category %}">{{ post.category }} </a>| <i class="fas fa-heart"></i> {{ post.number_of_likes }}  | <i class="fa-regular fa-comment"></i> {{ post.comment_count }} 
+                                    <!-- Display links to update or delete the post if the user is its author or superuser -->
                                     {% if request.user == post.author or request.user.is_superuser %} | 
-                                    <a href="{% url 'update_post' post.slug %}">(Update)</a> <a href="{% url 'delete_post' post.slug %}"> (Delete)</a>{% endif %}</p>
+                                    <a href="{% url 'update_post' post.slug %}">(Update)</a> <a href="{% url 'delete_post' post.slug %}"> (Delete)
+                                    </a>
+                                    </p>
+                                    {% endif %}
                             </div>
                             <div class="row">
                                 <p>{{ post.excerpt }} <a href="{% url 'post_detail' post.slug %}">Read More</a> </p> 
@@ -40,16 +50,16 @@
                     </div>
                 </div>
                 {% endfor %}
+                <!-- display if nothing found -->
             {% else%}
-            <h1 class="text-center mt-4 mb-4" style="color:#111c79;">Nothing found try something else</h1>
+            <h1 class="text-center mt-4 mb-4 font-blue">Nothing found try something else</h1>
             {% endif %}
+            <!-- display if search input was empty -->
             {% else %}
-            <h1 class="text-center mt-4 mb-4" style="color:#111c79;">Input empty, try search for posts or authors</h1>
+            <h1 class="text-center mt-4 mb-4 font-blue">Input empty, try search for posts or authors</h1>
             {% endif %}
         </div>
       </div>
     </div>
 </div>
-
-
 {% endblock %}
