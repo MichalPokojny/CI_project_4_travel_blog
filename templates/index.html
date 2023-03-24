@@ -1,9 +1,14 @@
+<!-- Extending from base template -->
 {% extends "base.html" %}
+<!-- Load static files -->
 {% load static %}
+<!-- Setting the active class for the home page in the nav bar-->
 {% block home %}active{% endblock %}
 {% block content %}
+<!-- Carousel section -->
 <section id="carousel">
     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-touch="false">
+      <!-- Carousel indicators -->
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -11,6 +16,7 @@
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
         </div>
+        <!-- Carousel items -->
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677881057/static/carousel-image/northern-lights_kcx9eo.jpg" class="d-block w-100 carousel-img" alt="northern-lights">
@@ -28,6 +34,7 @@
             <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677708038/static/carousel-image/nature-night_bhiy0t.jpg" class="d-block w-100 carousel-img" alt="nature">
           </div>
         </div>
+        <!-- Carousel controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -36,6 +43,7 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
+        <!-- Carousel cover -->
         <div class="carousel-cover">
             <h1>Adventurous</h1>
             <p>Life is short, explore the world and make every moment count.</p>
@@ -43,12 +51,15 @@
         </div>
       </div>
     </section>
+    <!-- Welcome message and image section -->
     <section id="welcome">
         <div class="container welcome-box mt-3">
         <div class="row text-center">
+          <!-- Welcome message title -->
             <h1 class="mt-3 mb-3 font-blue">Welcome to our blog!</h1>
         </div>
         <div class="row g-0">
+          <!-- Welcome message text -->
             <div class="col-md-6 text-center fs-5">
                 <p>This is a place where adventure-seekers, wanderers, 
                     and travelers come together to share their love for exploring the world.
@@ -62,11 +73,13 @@
                 </p>
             </div>
             <div class="col-md-6">
+              <!-- Welcome message image -->
                 <div class="welcome-img-box ">
                 <img src="https://res.cloudinary.com/doh67artq/image/upload/v1677767044/static/carousel-image/travel-couple_mji3gj.png" alt="hiker" class="welcome-img">
             </div>
             </div>
         </div>
+        <!-- This row has button to redirect to blog.html -->
         <div class="row g-0 text-center">
           <div class="col">
           <a href="{% url 'blog' %}" class="btn btn-secondary rounded-pill mt-3 mb-3">Travel Blogs</a></div>
