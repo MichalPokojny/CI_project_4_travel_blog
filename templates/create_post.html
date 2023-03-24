@@ -1,15 +1,17 @@
+<!-- Extend base template and load static files -->
 {% extends "base.html" %}
-
 {% load static %}
+<!-- Set active class link in the navbar -->
 {% block blog %}active{% endblock %}
 {% block content %}
-{% if user.is_authenticated %}
+<!-- If user has staff privilege show add blog post form  -->
+{% if user.is_staff %}
 <div class="container mt-5">
     <div class="row g-0">
         <div class="col-md-6 offset-md-3 postform-box" style="box-shadow: 0 0 50px #000;">
         <h1 class="text-center">Add Blog Post</h1>
-
         <div class="form-group">
+            <!-- Form with the summernote text editor -->
         <form method="POST" class="mt-3" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
@@ -22,8 +24,9 @@
         </div>
     </div>
 </div>
+<!-- If user not staff show this text -->
 {% else %}
-<div class="containter" style="height:85vh;">
+<div class="containter">
 <h1 class="text-center mt-5">Not allowed!</h1>
 </div>
 {% endif %}
