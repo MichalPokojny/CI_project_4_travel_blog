@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.http import HttpResponseForbidden, HttpResponseRedirect
-from django.db.models import Count
+from django.db.models import Count, Q
 from .models import *
 from .forms import CommentForm, PostForm, UserUpdateForm
 from django.contrib.auth.decorators import login_required
@@ -11,8 +11,12 @@ from django.contrib import messages
 
 
 def search_posts(request):
-
-    return render(request, 'search_posts.html', {})
+    if request.method == 'POST':
+        searched = request.POST.get('searched', '')
+        posts = Post.objects.filter(Q(title__contains=searched) | Q(author__username__contains=searched))
+        return render(request, 'search_posts.html', {'searched': searched, 'posts': posts})
+    else: 
+        return render(request, 'search_posts.html', {})
 
 
 class CategoryView(ListView):

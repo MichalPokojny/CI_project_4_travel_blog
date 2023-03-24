@@ -68,7 +68,7 @@
                         <div class="dropdown-menu dropdown-menu-lg-end" style="width:300px;">
                            <form class="d-flex" method="POST" action="{% url 'search_posts' %}">
                               {% csrf_token %}
-                              <input type="search" class="form-control ms-1 me-1" placeholder="Search" aria-label="search">
+                              <input type="search" class="form-control ms-1 me-1" placeholder="Search" aria-label="search" name="searched">
                               <button type="submit" class="btn btn-outline-secondary me-1" style="color:#111c79; font-weight: bold;" >Search</button>
                            </form>
                         </div>
