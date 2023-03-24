@@ -1,7 +1,7 @@
 {% extends "base.html" %}
+{% load static %}
 {% block login %}active{% endblock %}
 {% load i18n %}
-{% load account socialaccount %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
@@ -13,7 +13,7 @@
   <div class="row g-0">
     <div class="col text-center " style="height: 80vh;">
       <div class="auth">
-      <h1 class="mb-4" style="color:#111c79;">{% trans "Sign In" %}</h1>
+      <h1 class="mb-4 font-blue">{% trans "Sign In" %}</h1>
 
 
     <p class="mb-4">{% blocktrans %}If you have not created an account yet, then please

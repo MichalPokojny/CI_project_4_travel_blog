@@ -8,20 +8,20 @@
   <div class="row g-0">
     <div class="col">
       <div class="auth">
-        <h1 style="color:#111c79;" class="text-center">Profile</h1>
+        <h1 class="text-center font-blue">Profile</h1>
         <div class="container mt-5">
           <table>
             <tr>
-              <td class="float-end"><h5 style="color:#111c79;">Username :</h5></td> <td><h5>{{ user.username }}</h5></td>
+              <td class="float-end"><h5 class="font-blue">Username :</h5></td> <td><h5>{{ user.username }}</h5></td>
             </tr>
             <tr>
-              <td class="float-end"><h5 style="color:#111c79;">Email :</h5></td> <td><h5>{{ user.email }}</h5></td>
+              <td class="float-end"><h5 class="font-blue">Email :</h5></td> <td><h5>{{ user.email }}</h5></td>
             </tr>
             <tr>
-              <td class="float-end"><h5 style="color:#111c79;">Registered :</h5></td> <td><h5>{{ user.date_joined|date:"F j, Y" }}</h5></td>
+              <td class="float-end"><h5 class="font-blue">Registered :</h5></td> <td><h5>{{ user.date_joined|date:"F j, Y" }}</h5></td>
             </tr>
             <tr>
-              <td class="float-end"><h5 style="color:#111c79;">Logged in :</h5></td> <td><h5>{{ user.last_login| timesince }}</h5></td>
+              <td class="float-end"><h5 class="font-blue">Logged in :</h5></td> <td><h5>{{ user.last_login| timesince }}</h5></td>
             </tr>
           </table>
           <div class="text-center">
