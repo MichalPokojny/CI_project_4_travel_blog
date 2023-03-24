@@ -8,9 +8,9 @@
 {% block content %}
 <div class="containter">
   <div class="row g-0">
-    <div class="col text-center " style="height: 80vh;">
+    <div class="col text-center">
       <div class="auth">
-      <h1 class="mb-4" style="color:#111c79;">{% trans "Sign Out" %}</h1>
+      <h1 class="mb-4 font-blue" >{% trans "Sign Out" %}</h1>
 
 <p>{% trans 'Are you sure you want to sign out?' %}</p>
 
@@ -19,8 +19,18 @@
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
   {% endif %}
+  <div class="d-inline-block">
   <button type="submit" class="btn btn-secondary rounded-pill mt-4">{% trans 'Sign Out' %}</button>
+  </div>
 </form>
+<div class="d-inline-block">
+<button class="btn btn-secondary rounded-pill mt-4" onclick="goBack()">{% trans 'Cancel' %}</button>
+</div>
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>
       </div>
     </div>
   </div>
