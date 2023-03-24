@@ -226,20 +226,19 @@ footer {
 .welcome-img-box {
     
     overflow: hidden;
-    width: 100%;
+    width: 80%;
     height: auto;
     border-radius: 50%;
     position: relative;
-    margin-bottom: 10px;
+    margin: 0 auto 25px;
 }
 
 .welcome-img {
-    margin: 0;
-    overflow: hidden;
+    /* margin: 0; */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
     transform: translate(0%, 0%) scale(1.06)
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-30%, -25%) scale(0.5); */
 }
 
 /* authorisation pages */
