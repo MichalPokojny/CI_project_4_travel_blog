@@ -5,16 +5,22 @@ from django.utils.text import slugify
 from django.urls import reverse
 
 
-STATUS = ((0, 'Draft'), (1, 'Published'))
+STATUS = ((0, 'Draft'), (1, 'Published'))  # Tuple of choices for the status field of Post model
 
 
 class Category(models.Model):
+    """
+    Model for blog post category
+    """
     name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self): 
+        """
+        Returns the absolute url for the blog page
+        """
         return reverse('blog')     
 
 
@@ -35,19 +41,32 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     
     class Meta:
-        ordering = ['-created_on']
+        
+        ordering = ['-created_on']  # Ordering posts by created date
 
     def __str__(self):
+        """
+        Returns the string representation of the post object
+        """
         return str(self.author) + ' | ' + self.title
 
     def number_of_likes(self):
+        """
+        Returns the number of likes for the post
+        """
         return self.likes.count()
 
     def save(self, *args, **kwargs):
+        """
+        Overrides the save method to generate slug from the title and save the post
+        """
         self.slug = slugify(self.title.replace(' ', '-'))
         super(Post, self).save(*args, **kwargs) 
 
-    def get_absolute_url(self): 
+    def get_absolute_url(self):
+        """
+        Returns the absolute url for the blog page
+        """
         return reverse('blog')     
 
 
@@ -63,15 +82,23 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ['created_on']
+        ordering = ['-created_on']  # Ordering comments by created date
 
     def __str__(self):
+        """
+        Returns the string representation of the comment object
+        """
         return f"Comment {self.body} by {self.name}"
 
 
 class Profile(models.Model):
-
+    """
+    Model for User profile
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
+        """
+        Returns the string representation profile object
+        """
         return f'{self.user.username} Profile'

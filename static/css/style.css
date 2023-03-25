@@ -1,3 +1,4 @@
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Inconsolata&family=Nixie+One&display=swap');
 /*---- General Styling ----*/
 
@@ -34,7 +35,7 @@ ol, ul {
 /*---- Navigation Bar ----*/
 
 .navbar {
-    /* background-image: linear-gradient(to bottom, #c33764, #c7367a, #c53b93,); */
+
     padding: 0;
     opacity: 0.9;
     height: fit-content;
@@ -184,7 +185,7 @@ footer {
 }
 
 .explore-btn {
-    /* border: 1px solid #111c79;; */
+
     margin-bottom: 5px;
     border-radius: 10%;
     background-color: #00000033;
@@ -192,7 +193,6 @@ footer {
 
 .welcome-box{
     
-    /* margin-top: 5px; */
     width: 100%;
     height: 100%;
     background-color: #00000046;

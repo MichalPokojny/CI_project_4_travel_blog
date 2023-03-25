@@ -24,9 +24,11 @@
   </div>
 </form>
 <div class="d-inline-block">
+  <!-- button to call function goback if clicked -->
 <button class="btn btn-secondary rounded-pill mt-4" onclick="goBack()">{% trans 'Cancel' %}</button>
 </div>
 <script>
+  // funcion to go to previous page
   function goBack() {
     window.history.back();
   }
