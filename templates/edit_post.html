@@ -9,7 +9,7 @@
 {% if request.user == post.author or request.user.is_superuser %}
 <div class="container mt-5">
     <div class="row g-0">
-        <div class="postform-box" style="box-shadow: 0 0 50px #000;">
+        <div class="postform-box box-shadow">
         <h1 class="text-center">Edit Blog Post</h1>
 
         <div class="form-group">
@@ -28,7 +28,7 @@
 </div>
 <!-- Dispaly message if the user is not authorized to edit the post -->
 {% else %}
-<div class="containter" style="height:85vh;">
+<div class="containter">
 <h1 class="text-center mt-5">Not allowed!</h1>
 </div>
 {% endif %}

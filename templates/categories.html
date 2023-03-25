@@ -11,12 +11,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt3 left"> 
-            <h1 class="text-center mt-4 mb-4" style="color:#111c79;">Category: {{ cat }}</h1>
+            <h1 class="text-center mt-4 mb-4 font-blue">Category: {{ cat }}</h1>
             <div class="container">
             <div class="row g-0">
                 <!-- Loop through each post in  the selected category -->
                 {% for post in category_posts %}
-                <div class="welcome-box mb-4 p-2" style="box-shadow: 0 0 50px #000;">
+                <div class="box mb-4 p-2 box-shadow">
                     <div class="row">
                         <div class="col-md-4">
                             <!-- If the post has image, if not show default -->

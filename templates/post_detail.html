@@ -35,7 +35,7 @@
         <!-- Display like or unlike button for authenticated users -->
         {% if user.is_authenticated %}
         <div class="row g-0">
-            <form action="{% url 'blog_likes' post.slug %}" method="POST" class="m-3">
+            <form action="{% url 'blog_likes' post.slug %}" method="POST" class="ms-5 mt-5">
                 {% csrf_token %}
                 {% if liked %}
                 <button type="submit" name="post_id" value="{{ post.slug }}" class="btn btn-secondary rounded-pill"><i class="fas fa-heart"></i> Unlike</button>
@@ -48,12 +48,12 @@
         <!-- Comments section -->
         <div class="containter m-5">
         <div class="row g-0">
-            <h1 class="me-1">Comments</h1>
+            <h1 class="me-1 font-pink">Comments</h1>
         </div>
         <!-- Loop and show every approved comment -->
         {% for comment in comments %}
-        <div class="row g-0 mt-3 p-2" style="max-width: 90%; background-color: #c5c5c51c; border-radius: 3%;">
-            {{ comment.name }} | {{ comment.created_on }} <hr>{{ comment.body | linebreaks }}
+        <div class="row g-0 mt-3 p-2 comments">
+            <p>{{ comment.name }} | {{ comment.created_on }}</p> <hr>{{ comment.body | linebreaks }}
         </div>
         {% endfor %}
         <!-- After commented show message awaiting approval -->
