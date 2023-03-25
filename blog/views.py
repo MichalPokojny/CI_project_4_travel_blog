@@ -236,3 +236,15 @@ def profile_view(request):
     context = {'user': user, 'posts': posts, 'form': form}
     # render the profile page with the context dictionary
     return render(request, 'profile.html', context)
+
+
+def error_404_view(request, exception):
+    return render(request, '404.html')
+
+
+def error_403_view(request, exception):
+    return render(request, '403.html') 
+
+
+def error_500_view(request, exception):
+    return render(request, '500.html')    

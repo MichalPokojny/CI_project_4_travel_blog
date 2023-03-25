@@ -23,3 +23,7 @@ urlpatterns = [
     path('', include('info.urls'), name='info_urls'),
     path('blog/', include('blog.urls'), name='blog_urls'),
 ]
+
+handler404 = 'blog.views.error_404_view'
+handler403 = 'blog.views.error_403_view'
+handler500 = 'blog.views.error_500_view'

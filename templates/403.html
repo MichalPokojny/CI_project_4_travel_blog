@@ -1,0 +1,18 @@
+<!-- Extending from base template and load static files-->
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row g-0">
+      <div class="col">
+        <div class="auth">
+          <h1 class="text-center font-blue">Forbidden</h1>
+          <p class="mt-5 text-center">You don't have permission to access this page.</p>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}
