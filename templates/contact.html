@@ -30,8 +30,8 @@
       </div>
       <div class="col-md-6 text-center mt-5">
          <!-- Contact email form -->
-         <form onsubmit="return sendMail(this);" >
-            <div class="form-floating mb-4 mt-5  mx-auto" style="width:70%">
+         <form onsubmit="return sendMail(this);" style="width:80%" class="mx-auto">
+            <div class="form-floating mb-4 mt-5  mx-auto" >
                <!-- Dropdown menu to selecet message topic -->
                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
                   <option value="Travel">Travel</option>
@@ -41,21 +41,21 @@
                <label for="form-label">What is this message about?</label>
             </div>
             <!-- Inout field for first and last name -->
-            <div class="form-floating mb-4 mx-auto" style="width:70%">
+            <div class="form-floating mb-4 mx-auto">
                <input type=text id="firstname" class="form-control" placeholder="First Name"  required>
                <label for="firstname" class="form-label">First Name</label>
             </div>
-            <div class="form-floating mb-4 mx-auto" style="width:70%">
+            <div class="form-floating mb-4 mx-auto">
                <input type=text id="lastname" class="form-control" placeholder="Last Name"  required>
                <label for="lastname" class="form-label">Last Name</label>
             </div>
             <!-- Email address -->
-            <div class="form-floating mb-4 mx-auto" style="width:70%">
+            <div class="form-floating mb-4 mx-auto">
                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
                <label for="floatingInput">Email address</label>
             </div>
             <!-- Text are for message content -->
-            <div class="form-floating mb-4 mx-auto" style="width:70%">
+            <div class="form-floating mb-4 mx-auto">
                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 200px" required></textarea>
                <label for="floatingTextarea">Comments</label>
             </div>

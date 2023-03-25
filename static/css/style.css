@@ -9,9 +9,7 @@
 }
 
 body {
-	background-image: linear-gradient(to bottom, #c3c0c4, #afa2a8, #9c8586, #856a61, #67543e, #624a2e, #5c401f, #56360f, #712a20, #821c43, #792673, #3643a3);
-
-
+	background-image: linear-gradient(to bottom, #c3c0c4, #c3c0c4, #9c8586, #856a61, #67543e, #624a2e, #5c401f, #56360f, #712a20, #821c43, #3643a3, #3643a3);
 	font-family: 'Inconsolata', monospace;
 	min-height: 100vh;
 	display: flex;
@@ -248,7 +246,7 @@ footer {
 	margin: 50px auto 100px;
 	width: 65vh;
 	height: fit-content;
-	background-color: #00000046;
+    background-color: #00000037;
 	color: #d0b3b3;
 	border-radius: 0.5%;
 	box-shadow: 0 0 40px #000;
