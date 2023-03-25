@@ -46,7 +46,7 @@
         </div>
         {% endif %}
         <!-- Comments section -->
-        <div class="containter m-3">
+        <div class="containter m-5">
         <div class="row g-0">
             <h1 class="me-1">Comments</h1>
         </div>
@@ -62,13 +62,13 @@
             Your comment is awaiting for approval
         </div>
         {% else %}
-        <div class="row g-0 m-3">
+        <div class="row g-0 mt-5">
             <!-- Display add comment form if user authenticated-->
             {% if user.is_authenticated %}
             
             <h3 style="color: #FFF">Leave a comment:</h3>
             <p>Posting as: {{ user.username }}</p>
-            <form method="post" style="width: 90%;">
+            <form method="post" class="comment-form">
                 {{ comment_form | crispy }}
                 {% csrf_token %}
                 <button type="submit" class="btn btn-secondary rounded-pill mt-3 float-end">Submit</button>

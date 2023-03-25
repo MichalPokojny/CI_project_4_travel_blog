@@ -100,12 +100,6 @@ WSGI_APPLICATION = 'travelblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 DATABASES = {
      'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
@@ -161,4 +155,5 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Email api key for emailJS
 EMAIL_API_KEY = os.environ.get('EMAIL_API_KEY')

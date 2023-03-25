@@ -22,6 +22,5 @@ function sendMail(contactForm) {
             alert("Email hasn't been sent!");
         }
     );
-    return false;  // To block from loading a new page
-    
+    return false;  // To block from loading a new page 
 }
