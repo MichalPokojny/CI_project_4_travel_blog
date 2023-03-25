@@ -4,8 +4,8 @@ from cloudinary.models import CloudinaryField
 from django.utils.text import slugify
 from django.urls import reverse
 
-
-STATUS = ((0, 'Draft'), (1, 'Published'))  # Tuple of choices for the status field of Post model
+# Tuple of choices for the status field of Post model
+STATUS = ((0, 'Draft'), (1, 'Published'))
 
 
 class Category(models.Model):
@@ -17,11 +17,11 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self): 
+    def get_absolute_url(self):
         """
         Returns the absolute url for the blog page
         """
-        return reverse('blog')     
+        return reverse('blog')
 
 
 class Post(models.Model):
@@ -30,7 +30,8 @@ class Post(models.Model):
     """
     title = models.CharField(max_length=300, unique=True)
     slug = models.SlugField(max_length=300, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now=True)
     excerpt = models.TextField(blank=True)
     content = models.TextField()
@@ -39,9 +40,9 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-    
+
     class Meta:
-        
+
         ordering = ['-created_on']  # Ordering posts by created date
 
     def __str__(self):
@@ -58,24 +59,27 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        Overrides the save method to generate slug from the title and save the post
+        Overrides the save method to generate slug from the title and save
+        the post.
         """
         self.slug = slugify(self.title.replace(' ', '-'))
-        super(Post, self).save(*args, **kwargs) 
+        super(Post, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
         """
         Returns the absolute url for the blog page
         """
-        return reverse('blog')     
+        return reverse('blog')
 
 
 class Comment(models.Model):
     """
     Model for comments in post
     """
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
-    name = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_comment')
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name='comments')
+    name = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='blog_comment')
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
