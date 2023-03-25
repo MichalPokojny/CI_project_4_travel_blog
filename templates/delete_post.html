@@ -3,33 +3,31 @@
 {% load static %}
 <!-- Set blog link in the navbar active -->
 {% block blog %}active{% endblock %}
-
 {% block content %}
 <!-- Check if the user is authenticated and is the author of the post or superuser -->
 {% if request.user == post.author or request.user.is_superuser %}
 <div class="container mt-5">
-    <div class="row g-0">
-        <!-- Display post title and message to confirm deletion -->
-        <div class="postform-box box-shadow">
-        <h1 class="text-center"><span class="font-blue">Delete:</span> {{ post.title }}</h1>
-            <h4 class="text-center mt-5">Are you sure ?</h4>
-        <div class="form-group">
-        <form method="POST" class="mt-3">
-            {% csrf_token %}
-
-            <div class="text-center">
-            <button type="submit" class="btn btn-secondary rounded-pill mt-3">Delete Post</button>
-            <a role="button" href="{% url 'post_detail' post.slug %}" class="btn btn-secondary rounded-pill mt-3">Cancel</a>
-            </div>
-        </form>
-        </div>
-        </div>
-    </div>
+   <div class="row g-0">
+      <!-- Display post title and message to confirm deletion -->
+      <div class="postform-box box-shadow">
+         <h1 class="text-center"><span class="font-blue">Delete:</span> {{ post.title }}</h1>
+         <h4 class="text-center mt-5">Are you sure ?</h4>
+         <div class="form-group">
+            <form method="POST" class="mt-3">
+               {% csrf_token %}
+               <div class="text-center">
+                  <button type="submit" class="btn btn-secondary rounded-pill mt-3">Delete Post</button>
+                  <a role="button" href="{% url 'post_detail' post.slug %}" class="btn btn-secondary rounded-pill mt-3">Cancel</a>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
 </div>
 <!-- Display if the user is not authorized to delete the post -->
 {% else %}
 <div class="containter">
-<h1 class="text-center mt-5">Not allowed!</h1>
+   <h1 class="text-center mt-5">Not allowed!</h1>
 </div>
 {% endif %}
 {% endblock %}
