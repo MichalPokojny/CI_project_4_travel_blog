@@ -193,8 +193,8 @@ footer {
 .carousel-cover {
 	border-radius: 3%;
 	position: absolute;
-	top: 35%;
-	right: 15%;
+	top: 55%;
+	right: 9%;
 	width: 50vh;
 	height: fit-content;
 	background-color: #ffffff66;
@@ -274,6 +274,10 @@ footer {
 
 /*---- Post Detail page ----*/
 
+.row>* {
+    flex-shrink: unset;
+}
+
 .comments {
 
 	max-width: 50%;
@@ -295,15 +299,15 @@ footer {
 
 	/* For screens below 950px */
 	.comment-form {
-		width: 80%;
+		width: 95%;
 	}
 
 	.comments {
-		max-width: 80%;
+		max-width: 95%;
 	}
 
     .welcome-text {
-        font-size: 0.8em !important;
+        font-size: 1em !important;
     }
 }
 

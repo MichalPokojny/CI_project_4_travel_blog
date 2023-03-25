@@ -13,12 +13,12 @@
    </div>
    <div class="row g-0 mb-3 text-center">
       <!-- Display the author, date created, category, number of likes, number of comments of the post-->
-      <h5 style="font-size: 0.8em;">
+      <h5 style="font-size: 0.85em;" class="p-3">
          {{ post.author }} | {{ post.created_on }} | {{ post.category }} | <i class="fas fa-heart"></i> {{ post.number_of_likes }} | <i class="fa-regular fa-comment"></i> {{ post.comment_count }}
          <!-- Display links to update or delete the post if the user is its author or superuser -->
          {% if request.user == post.author or request.user.is_superuser %} | 
-         <a href="{% url 'update_post' post.slug %}">(Update)</a>
-         <a href="{% url 'delete_post' post.slug %}"> (Delete)</a>
+         <a class="font-blue" href="{% url 'update_post' post.slug %}">(Update)</a>
+         <a class="font-blue" href="{% url 'delete_post' post.slug %}"> (Delete)</a>
          {% endif %}
       </h5>
    </div>
