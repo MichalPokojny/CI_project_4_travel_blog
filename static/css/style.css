@@ -19,7 +19,7 @@ body {
 }
 
 a {
-	color: #08137a;
+	color: #d09696;
 	text-decoration: none;
 }
 
@@ -33,7 +33,7 @@ ul {
 }
 
 p {
-	color: #d0b3b3;
+	color: #cec4c4;
 }
 
 /* Main content and shadows */
@@ -68,7 +68,7 @@ p {
 /* Font colors */
 
 .font-blue {
-	color: #08137a;
+	color: #050dad;
 }
 
 .font-pink {
@@ -273,6 +273,7 @@ footer {
 }
 
 /*---- Post Detail page ----*/
+
 .comments {
 
 	max-width: 50%;
@@ -281,6 +282,10 @@ footer {
 	word-wrap: break-word;
 }
 
+.post-body img {
+    max-width: 100%;
+    height: auto;
+}
 
 .comment-form {
 	width: 50%;
@@ -296,6 +301,10 @@ footer {
 	.comments {
 		max-width: 80%;
 	}
+
+    .welcome-text {
+        font-size: 0.8em !important;
+    }
 }
 
 /*---- authorisation pages ----*/

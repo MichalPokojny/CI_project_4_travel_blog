@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import (
+    View, ListView, CreateView, UpdateView, DeleteView)
 from django.urls import reverse_lazy
 from django.http import HttpResponseForbidden, HttpResponseRedirect
 from django.db.models import Count, Q
@@ -19,9 +20,11 @@ def search_posts(request):
         searched = request.POST.get('searched', '')
 
         # Filtering the Post model based on the title or author name
-        posts = Post.objects.filter(Q(title__contains=searched) | Q(author__username__contains=searched))
+        posts = Post.objects.filter(Q(
+            title__contains=searched) | Q(author__username__contains=searched))
 
-        return render(request, 'search_posts.html', {'searched': searched, 'posts': posts})
+        return render(request, 'search_posts.html', {
+            'searched': searched, 'posts': posts})
     else:
         message = "Search unsuccessful"
         return render(request, 'search_posts.html', {'message': message})
@@ -44,16 +47,17 @@ class CategoryView(ListView):
         of creation date + add comment count.
         """
         cat = self.kwargs['cat']
-        return Post.objects.filter(category=cat, status=1).order_by('-created_on').annotate(comment_count=Count('comments'))
+        return Post.objects.filter(category=cat, status=1).order_by(
+            '-created_on').annotate(comment_count=Count('comments'))
 
     def get_context_data(self, **kwargs):
         """
-        Overriding the get_context_data method to add the category name 
+        Overriding the get_context_data method to add the category name
         to the context data
         """
         context = super().get_context_data(**kwargs)
         context['cat'] = self.kwargs['cat']
-        return context   
+        return context
 
 
 class CreatePostView(CreateView):
@@ -109,7 +113,7 @@ class UpdatePostView(UpdateView):
                 return redirect(post.get_absolute_url())
         else:
             form = PostForm(instance=post)
-        return render(request, 'blog/blog.html', {'form': form})            
+        return render(request, 'blog/blog.html', {'form': form})
 
 
 class DeletePostView(DeleteView):
@@ -126,7 +130,8 @@ class PostList(ListView):
     Class based view for viewing all the posts
     """
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('-created_on').annotate(comment_count=Count('comments'))
+    queryset = Post.objects.filter(status=1).order_by(
+        '-created_on').annotate(comment_count=Count('comments'))
     template_name = 'blog.html'
     cat = Category.objects.all()
     paginate_by = 5
@@ -153,7 +158,8 @@ class PostDetail(View):
     """
     def get(self, request, slug, *args, **kwargs):
         # Filters the published blog posts and count num of comments
-        queryset = Post.objects.filter(status=1).annotate(comment_count=Count('comments'))
+        queryset = Post.objects.filter(
+            status=1).annotate(comment_count=Count('comments'))
         # Retrieves a post with given slug or raises 404 err if doesnt exist
         post = get_object_or_404(queryset, slug=slug)
         # Retrieves the approved comments for the post
@@ -177,7 +183,8 @@ class PostDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1).annotate(comment_count=Count('comments'))
+        queryset = Post.objects.filter(
+            status=1).annotate(comment_count=Count('comments'))
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True)
         liked = False
@@ -194,7 +201,7 @@ class PostDetail(View):
             comment.save()
         else:
             # Form with the submitted data and errors
-            comment_form = CommentForm()    
+            comment_form = CommentForm()
 
         return render(
             request,
@@ -204,7 +211,7 @@ class PostDetail(View):
                 "comments": comments,
                 "commented": True,
                 "comment_form": comment_form,
-                "liked": liked,            
+                "liked": liked,
             },
         )
 
@@ -228,7 +235,8 @@ def profile_view(request):
         form = UserUpdateForm(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Your profile has been updated successfully!')
+            messages.success(
+                request, 'Your profile has been updated successfully!')
             return HttpResponseRedirect(reverse(profile_view))
         else:
             form = UserUpdateForm(instance=request.user)
