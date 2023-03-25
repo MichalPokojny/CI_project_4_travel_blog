@@ -1,7 +1,11 @@
+<!-- Extending from base template and load static files-->
 {% extends "base.html" %}
 {% load static %}
+<!-- Set the profile link active in the navbar -->
+{% block profile %}active{% endblock %}]
+
 {% load crispy_forms_tags %}
-{% block profile %}active{% endblock %}
+
 {% block content %}
 
 <div class="container-fluid">
@@ -10,6 +14,7 @@
       <div class="auth">
         <h1 class="text-center font-blue">Profile</h1>
         <div class="container mt-5">
+          <!-- table to display user information -->
           <table>
             <tr>
               <td class="float-end"><h5 class="font-blue">Username :</h5></td> <td><h5>{{ user.username }}</h5></td>
@@ -25,8 +30,10 @@
             </tr>
           </table>
           <div class="text-center">
+            <!-- button to trigger edit profile modal -->
           <button type="button" class="btn btn-secondary rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
           </div>
+          <!-- Edit profile modal -->
           <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -42,10 +49,12 @@
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
                     {% endif %}
                     <div class="modal-footer">
+                      <!-- Update or close buttons -->
                       <button class="btn btn-secondary" type="submit">Update</button>
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                   </form>
+                  <!-- Print message if edit profile was succesfull -->
                   {% if messages %}
                   {% for message in messages %}
                   <script>
@@ -54,13 +63,13 @@
                   {% endfor %}
                   {% endif %}
                 </div>
-                
               </div>
             </div>
           </div>
+          <!-- Display all user posts if have any with ability to change or delete them -->
           {% if posts %}
           <ul style="padding-left: 0;">
-          <h3 class="text-center mt-5 mb-3" style="color:#111c79;">Your blog posts</h3>
+          <h3 class="text-center mt-5 mb-3 font-blue">Your blog posts</h3>
           {% for post in posts %}
           <li><p>{{forloop.counter}}. {{ post.title }} <a href="{% url 'update_post' post.slug %}">(Update)</a>
                  <a href="{% url 'delete_post' post.slug %}"> (Delete)</a></p></li>
