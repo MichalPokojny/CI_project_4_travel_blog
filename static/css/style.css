@@ -269,10 +269,13 @@ footer {
 
 /*---- Post Detail page ----*/
 .comments {
+    
     max-width: 50%; 
     background-color: #c5c5c51c; 
     border-radius: 3%;
+    word-wrap: break-word;
 }
+
 
 .comment-form {
     width: 50%;

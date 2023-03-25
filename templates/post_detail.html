@@ -13,12 +13,14 @@
    </div>
    <div class="row g-0 mb-3 text-center">
       <!-- Display the author, date created, category, number of likes, number of comments of the post-->
-      <p style="font-size: 0.8em;">
+      <h5 style="font-size: 0.8em;">
          {{ post.author }} | {{ post.created_on }} | {{ post.category }} | <i class="fas fa-heart"></i> {{ post.number_of_likes }} | <i class="fa-regular fa-comment"></i> {{ post.comment_count }}
          <!-- Display links to update or delete the post if the user is its author or superuser -->
          {% if request.user == post.author or request.user.is_superuser %} | 
-         <a href="{% url 'update_post' post.slug %}">(Update)</a> <a href="{% url 'delete_post' post.slug %}"> (Delete)</a>{% endif %}
-      </p>
+         <a href="{% url 'update_post' post.slug %}">(Update)</a>
+         <a href="{% url 'delete_post' post.slug %}"> (Delete)</a>
+         {% endif %}
+      </h5>
    </div>
    <div class="welcome-box">
       <div class="row g-0 mb-3 p-3">
@@ -36,7 +38,7 @@
          <!-- Display like or unlike button for authenticated users -->
          {% if user.is_authenticated %}
          <div class="row g-0">
-            <form action="{% url 'blog_likes' post.slug %}" method="POST" class="ms-5 mt-5">
+            <form action="{% url 'blog_likes' post.slug %}" method="POST" class="ms-4 mt-5">
                {% csrf_token %}
                {% if liked %}
                <button type="submit" name="post_id" value="{{ post.slug }}" class="btn btn-secondary rounded-pill"><i class="fas fa-heart"></i> Unlike</button>
@@ -47,7 +49,7 @@
          </div>
          {% endif %}
          <!-- Comments section -->
-         <div class="containter m-5">
+         <div class="containter m-4">
             <div class="row g-0">
                <h1 class="me-1 font-pink">Comments</h1>
             </div>
@@ -56,7 +58,7 @@
             <div class="row g-0 mt-3 p-2 comments">
                <p>{{ comment.name }} | {{ comment.created_on }}</p>
                <hr>
-               {{ comment.body | linebreaks }}
+               <p>{{ comment.body | linebreaks }}</p>
             </div>
             {% endfor %}
             <!-- After commented show message awaiting approval -->
