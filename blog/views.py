@@ -243,8 +243,8 @@ def error_404_view(request, exception):
 
 
 def error_403_view(request, exception):
-    return render(request, '403.html') 
+    return render(request, '403.html')
 
 
-def error_500_view(request, exception):
-    return render(request, '500.html')    
+def error_500_view(request):
+    return render(request, '500.html', status=500)
