@@ -1,4 +1,4 @@
-/* Google Fonts */
+/*---- Google Fonts ----*/
 @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Inconsolata&family=Nixie+One&display=swap');
 /*---- General Styling ----*/
 
@@ -35,7 +35,7 @@ p {
 	color: #cec4c4;
 }
 
-/* Main content and shadows */
+/* ---- Main content and shadows ----*/
 
 .main-content {
 	flex: 1;
@@ -49,7 +49,6 @@ p {
 
 	width: 100%;
 	height: 100%;
-	/* background-color: #00000046; */
 	background-color: #00000069;
 	color: #d0b3b3;
 	border-radius: 0.5%;
@@ -65,10 +64,10 @@ p {
 	padding: 10px;
 }
 
-/* Font colors */
+/* ---- Font colors ----*/
 
 .font-blue {
-	color: #ffffff;
+	color: #d4d3ff;
 }
 
 .font-pink {
@@ -319,4 +318,14 @@ footer {
 	margin: 0 auto 10px;
 	width: 90%;
 	background-color: #0000004f;
+}
+
+/* ---- Registration form ---- */
+
+.reg-form * {
+	margin: 10px;
+}
+
+.reg-form label {
+	float: right;
 }
