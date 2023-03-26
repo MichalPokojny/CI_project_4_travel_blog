@@ -235,11 +235,20 @@ def profile_view(request):
         form = UserUpdateForm(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
-            messages.success(
-                request, 'Your profile has been updated successfully!')
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Your profile has been updated !',
+                extra_tags='profile_updated')
             return HttpResponseRedirect(reverse(profile_view))
         else:
             form = UserUpdateForm(instance=request.user)
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Something went wrong!',
+                extra_tags='profile_updated')
+            return HttpResponseRedirect(reverse(profile_view))
     # create a context dictionary with the user object, posts and form
     context = {'user': user, 'posts': posts, 'form': form}
     # render the profile page with the context dictionary

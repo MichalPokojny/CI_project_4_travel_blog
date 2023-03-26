@@ -54,18 +54,19 @@
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                   </form>
-                  <!-- Print message if edit profile was succesfull -->
-                  {% if messages %}
-                  {% for message in messages %}
-                  <script>
-                    alert('{{ message }}')
-                  </script>
-                  {% endfor %}
-                  {% endif %}
                 </div>
               </div>
             </div>
           </div>
+          <!-- Print message if edit profile was succesfull -->
+          {% for message in messages %}
+          {% if message.extra_tags == 'profile_updated' %}
+        <div class="alert alert-success mt-5" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="close"></button>
+        </div>
+          {% endif %}
+        {% endfor %}
           <!-- Display all user posts if have any with ability to change or delete them -->
           {% if posts %}
           <ul style="padding-left: 0;">
