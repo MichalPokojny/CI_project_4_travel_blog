@@ -16,7 +16,7 @@
                <!-- Loop through each post in  the selected category -->
                {% for post in category_posts %}
                <div class="box mb-4 p-2 box-shadow">
-                  <div class="row">
+                  <div class="row g-0">
                      <div class="col-md-4">
                         <!-- If the post has image, if not show default -->
                         {% if "placeholder" in post.featured_image.url %}
@@ -105,7 +105,7 @@
 </div>
 <!-- If no post exists in the category show message -->
 {% else %}
-<div class="containter" style="height:85vh;">
+<div class="containter">
    <h1 class="text-center mt-5">No posts yet in this category!</h1>
 </div>
 {% endif %}
