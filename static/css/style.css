@@ -9,7 +9,7 @@
 }
 
 body {
-	background-image: linear-gradient(to bottom, #c3c0c4, #c3c0c4, #9c8586, #856a61, #67543e, #624a2e, #5c401f, #56360f, #712a20, #821c43, #3643a3, #3643a3);
+	background-image: linear-gradient(to bottom, #c3c0c4, #9c8586, #9c8586, #856a61, #67543e, #624a2e, #5c401f, #56360f, #712a20, #821c43, #3643a3, #3643a3);
 	font-family: 'Inconsolata', monospace;
 	min-height: 100vh;
 	display: flex;
@@ -26,7 +26,8 @@ a:hover {
 }
 
 ol,
-ul {
+ul,
+li {
 	list-style: none;
 }
 
@@ -48,7 +49,8 @@ p {
 
 	width: 100%;
 	height: 100%;
-	background-color: #00000046;
+	/* background-color: #00000046; */
+	background-color: #00000069;
 	color: #d0b3b3;
 	border-radius: 0.5%;
 }
@@ -66,11 +68,11 @@ p {
 /* Font colors */
 
 .font-blue {
-	color: #050dad;
+	color: #ffffff;
 }
 
 .font-pink {
-	color: #d0b3b3;
+	color: #d4a5a5;
 }
 
 /*---- Navigation Bar ----*/
@@ -292,6 +294,7 @@ footer {
 .comment-form {
 	width: 50%;
 }
+
 
 @media screen and (max-width : 950px) {
 
