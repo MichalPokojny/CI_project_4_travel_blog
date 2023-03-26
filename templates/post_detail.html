@@ -50,9 +50,13 @@
          {% endif %}
          <!-- Comments section -->
          <div class="containter m-4">
+            {% if comments %}
             <div class="row g-0">
                <h1 class="me-1 font-pink">Comments</h1>
             </div>
+            {% else %}
+            <h1 class="me-1 font-pink">No comments yet.</h1>
+            {% endif %}
             <!-- Loop and show every approved comment -->
             {% for comment in comments %}
             <div class="row g-0 mt-3 p-2 comments">

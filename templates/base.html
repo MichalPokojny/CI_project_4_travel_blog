@@ -43,16 +43,16 @@
                   <a href="#" class="nav-link dropdown-toggle {% block blog %}{% endblock %}" id="dropdownMenu"
                      role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
                   <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenu">
-                     <li><a href="{% url 'blog' %}" class="dropdown-item">All</a></li>
+                     <li><a href="{% url 'blog' %}" class="dropdown-item fw-bold">All</a></li>
                      <div class="dropdown-divider"></div>
                      {% if cat_items %}
                      {% for item in cat_items %}
-                     <li><a href="{% url 'category' item %}" class="dropdown-item">{{ item }}</a></li>
+                     <li><a href="{% url 'category' item %}" class="dropdown-item fw-bold">{{ item }}</a></li>
                      {% endfor %}
                      {% endif %}
                      {% if user.is_staff %}
                      <div class="dropdown-divider"></div>
-                     <li><a href="{% url 'create_post' %}" class="dropdown-item">Add a blog post</a></li>
+                     <li><a href="{% url 'create_post' %}" class="dropdown-item fw-bold">Add a blog post</a></li>
                      {% endif %}
                   </ul>
                </li>
@@ -72,9 +72,9 @@
                         <!-- Search form -->
                         <form class="d-flex" method="POST" action="{% url 'search_posts' %}">
                            {% csrf_token %}
-                           <input type="search" class="form-control ms-1 me-1" placeholder="Search" aria-label="search"
+                           <input type="search" class="form-control ms-1 me-1 fw-bold" placeholder="Search for post" aria-label="search"
                               name="searched">
-                           <button type="submit" class="btn btn-outline-secondary me-1"
+                           <button type="submit" class="btn btn-secondary me-1"
                               style="font-weight: bold;">Search</button>
                         </form>
                      </div>
