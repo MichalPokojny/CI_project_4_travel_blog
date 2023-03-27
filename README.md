@@ -1,4 +1,4 @@
-# Travel Blog
+# Adventurous Travel Blog
 
 ## Introduction
 
@@ -101,10 +101,42 @@ All my user stories, sprint that can be accessed using GitHub Issues, which serv
 ### Wireframes
 
 The wireframes for this project can be accessed [here.](./WIREFRAMES.md)
+<br><br>
+
+### Database diagram
+
+<p align="center">
+<img src="./assets/other/database_diagram.png">
+</p>
 
 ### Typography and colour scheme
 
-## Database diagram
+#### Fonts
+
+* For Carousel cover I used font:
+<p align="center">
+<img src="./assets/other/carousel_font.png">
+</p>
+
+* For general body text I used font :
+<p align="center">
+<img src="./assets/other/body_text_font.png">
+</p>
+
+* For navigation bar I used font :
+<p align="center">
+<img src="./assets/other/navbar_font.png">
+</p>
+
+<br>
+
+#### Colour
+
+Colour pallet used for this website.
+
+<p align="center">
+<img src="./assets/other/colors.png">
+</p>
 
 ## Features
 
