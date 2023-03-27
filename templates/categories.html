@@ -16,7 +16,7 @@
                <!-- Loop through each post in  the selected category -->
                {% for post in category_posts %}
                <div class="box mb-4 p-2 box-shadow">
-                  <div class="row g-0">
+                  <div class="row">
                      <div class="col-md-4">
                         <!-- If the post has image, if not show default -->
                         {% if "placeholder" in post.featured_image.url %}

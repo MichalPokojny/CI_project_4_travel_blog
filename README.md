@@ -272,6 +272,12 @@ User posts list
 <img src="./assets/features/searched_success.png">
 </p>
 
+* If search post is not found, relevant text is displayed
+
+<p align="center">
+<img src="./assets/features/search_not_found.png">
+</p>
+
 ## Testing
 
 ## Technologies Used
