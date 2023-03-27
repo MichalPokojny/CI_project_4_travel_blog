@@ -9,9 +9,11 @@ The travel blog is built using Django framework, which is powerful web framework
 The aim of this project is to create community where travelers can document their trips, showcase photos, and connect with like-minded individuals. With a user-friendly design, navigating the website finding relevant information.
 Additionally, the project includes an admin interface that allows the administrator to manage content, users, and other aspects of the website.
 
-<p>
-<img>
+<p align="center">
+<img src="./assets/other/responsive-image.png">
 </p>
+
+[Live version of my project](https://adventurous-blog.herokuapp.com/)
 
 ## Table of Contents
 
@@ -33,9 +35,48 @@ Additionally, the project includes an admin interface that allows the administra
 
 ## User Experience
 
-### User Stories    
+### User stories
+
+|  | As a non-logged in user |
+| --- | --- |
+| 1. | I want to browse the travel blog and view its content without having to create an account. |
+| 2. | I want to search for specific blog posts or all author posts. |
+| 3. | I want to easily navigate to the different sections of the travel blog. |
+| 4. | I want to contact the site owner via email form without registration needed. |
+| 5. | I want to be able to register to the website.  |
+| 6. | I want to be able to log in to the website once registered.  |
+
+|  | As a logged in user |
+| --- | --- |
+| 1. | I want to be able to comment on blog posts and interact with other users. |
+| 2. | I want to like/unlike the blog posts. |
+| 3. | I want to edit my username or email address. |
+| 4. | I want to be able to logout from the website. |
+
+|  | As a staff/superuser user |
+| --- | --- |
+| 1. | I want to be able to create and publish post to the travel blog website. |
+| 2. | I want to be able to edit my post to the travel blog website. |
+| 3. | I want to be able to delete my post from the blog. |
+| 4. | I want to be able to see all my blog posts sorted in my profile page. |
+| 5. | I want to create draft posts that can be accessed later. |
+
+|  | As a superuser |
+| --- | --- |
+| 1. | I want to be able to access all of the website features and settings. |
+| 2. | I want to be able to manage all user accounts. |
+| 3. | I want to be able to approve/manage all comments on the posts. |
+| 4. | I want to be able to add new blog category. |
+| 5. | I want to be able to give users authority to staff or superuser. |
+
+<br>
 
 ### Agile Methodology
+
+My travel blog project was developed using Agile methodology. 
+All my user stories, sprint that can be accessed using GitHub Issues, which serverd as a roadmap for my development process can be found [here.](https://github.com/MichalPokojny/CI_project_4_travel_blog/issues?q=is%3Aissue+is%3Aclosed)
+
+<br>
 
 ## Design
 
