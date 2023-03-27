@@ -14,6 +14,7 @@ Additionally, the project includes an admin interface that allows the administra
 </p>
 
 [Live version of my project](https://adventurous-blog.herokuapp.com/)
+<br><br>
 
 ## Table of Contents
 
@@ -32,8 +33,15 @@ Additionally, the project includes an admin interface that allows the administra
 - [Credits](#credits)
 - [Acknowledgments](#acknowledgements)        
     
+<br>
 
 ## User Experience
+<br>
+
+### Project Goal
+
+* The goal of this project is to provide a platform for users that can discover and share information of their visited travel destinations, activities and tips.
+<br><br>
 
 ### User stories
 
@@ -43,31 +51,41 @@ Additionally, the project includes an admin interface that allows the administra
 | 2. | I want to search for specific blog posts or all author posts. |
 | 3. | I want to easily navigate to the different sections of the travel blog. |
 | 4. | I want to contact the site owner via email form without registration needed. |
-| 5. | I want to be able to register to the website.  |
-| 6. | I want to be able to log in to the website once registered.  |
+| 5. | I want to register to the website.  |
+| 6. | I want to log in to the website once registered.  |
 
 |  | As a logged in user |
 | --- | --- |
-| 1. | I want to be able to comment on blog posts and interact with other users. |
+| 1. | I want to comment on blog posts and interact with other users. |
 | 2. | I want to like/unlike the blog posts. |
 | 3. | I want to edit my username or email address. |
-| 4. | I want to be able to logout from the website. |
+| 4. | I want to logout from the website. |
 
 |  | As a staff/superuser user |
 | --- | --- |
-| 1. | I want to be able to create and publish post to the travel blog website. |
-| 2. | I want to be able to edit my post to the travel blog website. |
-| 3. | I want to be able to delete my post from the blog. |
-| 4. | I want to be able to see all my blog posts sorted in my profile page. |
+| 1. | I want to create and publish post to the travel blog website. |
+| 2. | I want to edit my post to the travel blog website. |
+| 3. | I want to delete my post from the blog. |
+| 4. | I want to see all my blog posts sorted in my profile page. |
 | 5. | I want to create draft posts that can be accessed later. |
 
 |  | As a superuser |
 | --- | --- |
-| 1. | I want to be able to access all of the website features and settings. |
-| 2. | I want to be able to manage all user accounts. |
-| 3. | I want to be able to approve/manage all comments on the posts. |
-| 4. | I want to be able to add new blog category. |
-| 5. | I want to be able to give users authority to staff or superuser. |
+| 1. | I want to access all of the website features and settings. |
+| 2. | I want to manage all user accounts. |
+| 3. | I want to approve/manage all comments on the posts. |
+| 4. | I want to add new blog category. |
+| 5. | I want to give users authority to staff or superuser. |
+
+<br>
+
+### Scopes
+
+* Create responsive and user-friendly website allowing users to browse, read blogs, search posts.
+* Include user authentication that allows users to register, login to the website for commenting and liking posts.
+* Include email API that allows users to send email directly from the website.
+* Inluclude summernote text editor for creating new posts.
+* Optimize website performance, security, and accessibilty using best practices in web development.
 
 <br>
 
@@ -81,6 +99,8 @@ All my user stories, sprint that can be accessed using GitHub Issues, which serv
 ## Design
 
 ### Wireframes
+
+The wireframes for this project can be accessed [here.](./WIREFRAMES.md)
 
 ### Typography and colour scheme
 
