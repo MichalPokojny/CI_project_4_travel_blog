@@ -21,6 +21,12 @@
 <img src="./assets/features/navbar_search.png">
 </p>
 
+* For smaller devices navbar is collapsible
+
+<p align="center">
+<img src="./assets/features/navbar_phone.png">
+</p>
+
 ### Footer 
 
 * Footer section at the bottom of the website include social links with glowing hover effect and contact details

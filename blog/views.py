@@ -202,7 +202,6 @@ class PostDetail(View):
         else:
             # Form with the submitted data and errors
             comment_form = CommentForm()
-
         return render(
             request,
             "post_detail.html",

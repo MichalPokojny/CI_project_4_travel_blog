@@ -18,7 +18,7 @@ class Contact(TemplateView):
 
     def get_context_data(self, **kwargs):
         """
-        Adds the emailJS API key from Django settings 
+        Adds the emailJS API key from Django settings
         to the context dictionary.
         """
         context = super().get_context_data(**kwargs)
