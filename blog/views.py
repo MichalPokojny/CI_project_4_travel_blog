@@ -9,7 +9,6 @@ from .forms import CommentForm, PostForm, UserUpdateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.core.paginator import Paginator
 
 
 def search_posts(request):
@@ -24,12 +23,8 @@ def search_posts(request):
         posts = Post.objects.filter(Q(
             title__contains=searched) | Q(author__username__contains=searched))
 
-        paginator = Paginator(posts, 5)  # Include only 5 posts per page
-        page_number = request.GET.get('page')
-        page_obj = paginator.get_page(page_number)    
-
         return render(request, 'search_posts.html', {
-            'searched': searched, 'page_obj': page_obj})
+            'searched': searched, 'posts': posts})
     else:
         message = "Search unsuccessful"
         return render(request, 'search_posts.html', {'message': message})

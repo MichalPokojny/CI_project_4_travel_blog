@@ -12,7 +12,7 @@ class Category(models.Model):
     """
     Model for blog post category
     """
-    name = models.CharField(max_length=255)
+    name = models.TextField()
 
     def __str__(self):
         return self.name
