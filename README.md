@@ -153,12 +153,8 @@ Features of this project can be accessed [here.](./FEATURES.md)
 
 ## Testing
 
-
-
-## Bugs
-
-* Updating post can update all fields except featured image.
-* Clicking on page numbers sometimes won't react.
+Testing of this project can be accessed [here.](./TESTING.md)
+<br> <br>
 
 
 ## Technologies Used
@@ -167,22 +163,28 @@ Features of this project can be accessed [here.](./FEATURES.md)
 - CSS 3 - Styling of the website.
 - Bootstrap - General styling and responsivness
 - Python - Website backend development.
+- Javascript - Website script used for sending emails.
+- EmailJS - Email sending API from the contact form.
 - Django - Web Framework.
-- Javascript - Script for sending emails.
-- Balsamiq - Wireframe planning.
-- LucidChart - Creating the database diagram.
 - Cloudinary - Storing the static files.
-- Favicon.ico  - Generating the website favicon.
+- ElephantSQL - Database used for this project.
 - Heroku - Hosting the website.
 - GitHub - Stores the repository.
 - GitPod - Workspace of the project.
+- Balsamiq - Wireframe planning.
+- Font Awesome - Icons for the website.
+- Google Fonts - Fonts used for the website.
+- LucidChart - Creating the database diagram.
+- Favicon.ico  - Generating the website favicon.
+- Coolors - Colour palette of the project.
 - LogoAi - Creating the website logo.
 - Grammarly - Grammar check of all the text in the website and readme file.
 - Google Chrome - Main testing of the website on all devices.
 - Google Chrome Lighthouse - Testing the performance of each page.
-- HTML - W3C HTML Validator - Validating HTML code.
-- CSS - Jigsaw CSS Validator - Validating CSS code.
-- Ci Python LInter - Validating Python code.
+- W3C HTML Validator - Validating HTML code.
+- Jigsaw CSS Validator - Validating CSS code.
+- Ci Python Linter - Validating Python code.
+- JS Hint - Validating Javascript code.
 
 ### Python packages
 
