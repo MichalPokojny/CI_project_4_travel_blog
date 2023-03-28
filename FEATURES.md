@@ -184,7 +184,7 @@ User posts list
 
 ### Pagination
 
-* All blogs posts page, categories and search result page has pagination feature included displaying 5 posts per page.
+* All blogs posts page and categories page has pagination feature included displaying 5 posts per page.
 * This allows users to  navigate through large dataset by breaking it up into smaller, more manageable pages.
 * Pages include buttons to move between pages and also number of the current page displaying.
 

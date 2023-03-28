@@ -6,9 +6,9 @@
 {% block emailScriptHead %}
 <!-- emailJS scripts -->
 <!-- Load emailJs library -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <!-- Initialize emailJS using API key from settings.py -->
-<script type="text/javascript">
+<script>
    (function() {
      emailjs.init("{{API_KEY}}");
    })();
@@ -38,7 +38,7 @@
                   <option value="Food recommendation">Food recommendation</option>
                   <option value="Other">Other</option>
                </select>
-               <label for="form-label">What is this message about?</label>
+               <label for="floatingSelect">What is this message about?</label>
             </div>
             <!-- Inout field for first and last name -->
             <div class="form-floating mb-4 mx-auto">
