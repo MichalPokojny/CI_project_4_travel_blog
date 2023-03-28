@@ -69,8 +69,8 @@
         {% endfor %}
           <!-- Display all user posts if have any with ability to change or delete them -->
           {% if posts %}
-          <ul style="padding-left: 0;">
           <h3 class="text-center mt-5 mb-3 font-blue">Your blog posts</h3>
+          <ul style="padding-left: 0;">
           {% for post in posts %}
           <li>
             <p>{{forloop.counter}}. {{ post.title }} 
@@ -78,7 +78,9 @@
                  <a href="{% url 'delete_post' post.slug %}"> (Delete)</a>
             </p>
           </li>
-          <hr>
+          {% if not forloop.last %}
+          <li><hr></li>
+          {% endif %}
           {% endfor %}
           </ul>
           {% endif %}
