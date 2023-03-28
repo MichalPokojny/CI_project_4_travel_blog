@@ -62,7 +62,7 @@
             <div class="row g-0 mt-3 p-2 comments">
                <p>{{ comment.name }} | {{ comment.created_on }}</p>
                <hr>
-               <p>{{ comment.body | linebreaks }}</p>
+               {{ comment.body | linebreaks }}
             </div>
             {% endfor %}
             <!-- After commented show message awaiting approval -->
