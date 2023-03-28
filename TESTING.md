@@ -14,7 +14,7 @@ The website has been tested thoroughly on several different browsers.
 
 Python Validation
 
-* Python code was tested using PEP8 Code Institute Python linter validator
+* Python code was tested using PEP8 Code Institute [Python Linter Validator](https://pep8ci.herokuapp.com/)
 
 **Blog app**
 
@@ -60,6 +60,9 @@ urls.py
 <img src="./assets/test/pep_info_urls.png">
 </p>
 
+HTML 
+
+* HTML code was tested using 
 
 
 
