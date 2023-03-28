@@ -182,6 +182,16 @@ User posts list
 
 ## Additional features
 
+### Pagination
+
+* All blogs posts page, categories and search result page has pagination feature included displaying 5 posts per page.
+* This allows users to  navigate through large dataset by breaking it up into smaller, more manageable pages.
+* Pages include buttons to move between pages and also number of the current page displaying.
+
+<p align="center">
+<img src="./assets/features/pagination.png">
+</p>
+
 ### Like/Unlike button
 
 * If the user is authenticated they can like or unlike the post.
