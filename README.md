@@ -18,18 +18,27 @@ Additionally, the project includes an admin interface that allows the administra
 
 ## Table of Contents
 
-- [Introduction](#travel-blog)
+- [Introduction](#introduction)
 - [User Experience](#user-experience)
+    - [Project Goal](#project-goal)
     - [User Stories](#user-stories)
+    - [Scopes](#scopes)    
     - [Agile Methodology](#agile-methodology)
 - [Design](#design)
     - [Wireframes](#wireframes)
-    - [Typgraphy and colour scheme](#typography-and-colour-scheme)
-- [Database Diagram](#database-diagram)
+    - [Database Diagram](#database-diagram)
+    - [Typography and colour scheme](#typography-and-colour-scheme)
+        - [Fonts](#fonts)
+        - [Colour](#colour)            
 - [Features](#features)
+- [Future Features](#future-features)
 - [Testing](#testing)
 - [Technologies Used](#technologies-used)
+- [Python Packages](#python-packages)
 - [Deployment](#deployment)
+    - [Deploying on heroku](#deploying-on-heroku)
+    - [Fork repository](#to-fork-this-repository)
+    - [Cloning](#cloning-this-project)    
 - [Credits](#credits)
 - [Acknowledgments](#acknowledgements)        
     
@@ -40,7 +49,7 @@ Additionally, the project includes an admin interface that allows the administra
 
 ### Project Goal
 
-* The goal of this project is to provide a platform for users that can discover and share information of their visited travel destinations, activities and tips.
+* The goal of this project is to provide a platform for users where they can discover and share information about their travel destinations, activities, and tips.
 <br><br>
 
 ### User stories
@@ -145,11 +154,11 @@ Features of this project can be accessed [here.](./FEATURES.md)
 
 ## Future features
 
-* Updating website for showing messsages when user log in, register, log out.
-* Updating blog post with Google map API for the location of the blog post place.
-* Updating to Social authentication as well as normal log in.
-* Posibility for edititing or deleting post comment by the author.
-* Posiblity to upload profile image of the registered user.
+* Update the website to display messages when the user logs in, registers, or logs out.
+* Enhance the blog posts by integrating Google Maps API to show the location of the blog post's place.
+* Upgrade to support social authentication in addition to normal login.
+* Enable the author to edit or delete post comments.
+* Allow registered users to upload profile images.
 
 ## Testing
 
@@ -159,33 +168,34 @@ Testing of this project can be accessed [here.](./TESTING.md)
 
 ## Technologies Used
 
-- HTML 5 - Main structure of the website.
-- CSS 3 - Styling of the website.
-- Bootstrap - General styling and responsivness
-- Python - Website backend development.
-- Javascript - Website script used for sending emails.
-- EmailJS - Email sending API from the contact form.
-- Django - Web Framework.
-- Cloudinary - Storing the static files.
-- ElephantSQL - Database used for this project.
-- Heroku - Hosting the website.
-- GitHub - Stores the repository.
-- GitPod - Workspace of the project.
-- Balsamiq - Wireframe planning.
-- Font Awesome - Icons for the website.
-- Google Fonts - Fonts used for the website.
-- LucidChart - Creating the database diagram.
-- Favicon.ico  - Generating the website favicon.
-- Coolors - Colour palette of the project.
-- LogoAi - Creating the website logo.
-- Grammarly - Grammar check of all the text in the website and readme file.
-- Google Chrome - Main testing of the website on all devices.
-- Google Chrome Lighthouse - Testing the performance of each page.
-- W3C HTML Validator - Validating HTML code.
-- Jigsaw CSS Validator - Validating CSS code.
-- Ci Python Linter - Validating Python code.
-- JS Hint - Validating Javascript code.
-- Pxhere - Ilustrative images for website.
+  -  HTML 5: Provides the main structure of the website.
+  -  CSS 3: Used for styling the website.
+  -  Bootstrap: Used for general styling and responsiveness of the website.
+  -  Python: Used for the website's backend development.
+  -  JavaScript: Used for website scripts, including sending emails.
+  -  EmailJS: Used for email sending API from the contact form.
+  -  Django: Used as the web framework.
+  -  Cloudinary: Used for storing the website's static files.
+  -  ElephantSQL: Used as the database for this project.
+  -  Heroku: Used for hosting the website.
+  -  GitHub: Used to store the repository.
+  -  GitPod: Used as the workspace for the project.
+  -  Balsamiq: Used for wireframe planning.
+  -  Font Awesome: Used for icons on the website.
+  -  Google Fonts: Used for fonts on the website.
+  -  LucidChart: Used for creating the database diagram.
+  -  Favicon.ico: Used for generating the website favicon.
+  -  Coolors: Used for selecting the color palette of the project.
+  -  LogoAi: Used for creating the website logo.
+  -  Grammarly: Used for grammar checking all the text on the website and in the readme file.
+  -  Google Chrome: Used for main testing of the website on all devices.
+  -  Google Chrome Lighthouse: Used for testing the performance of each page.
+  -  W3C HTML Validator: Used for validating the HTML code.
+  -  Jigsaw CSS Validator: Used for validating the CSS code.
+  -  Ci Python Linter: Used for validating the Python code.
+  -  JSHint: Used for validating the JavaScript code.
+  -  Pxhere: Used for illustrative images on the website.
+  -  Microsoft Word: Used for testing documentation.
 
 ### Python packages
 
@@ -220,7 +230,7 @@ For deployment this project on Heroku, you need to follow these steps:
 6. In the ElephantSQL click "Create New instance"
 7. Set up your plan
 8. Select Region
-9. Selecect a data center near you
+9. Select a data center near you
 10. Click review
 11. Click "Create instance"
 12. Return to ElepantSQL dashboard and click on the "database instance name" for this project.
@@ -255,5 +265,5 @@ For deployment this project on Heroku, you need to follow these steps:
 
 ## Acknowledgements
 
-* I want to thank you to Code Institute for learning material and support.
+* I want to thanks to Code Institute for learning material and support.
 * Slack Code Institute community for all issues resolved and support.

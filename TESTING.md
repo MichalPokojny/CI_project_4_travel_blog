@@ -262,9 +262,11 @@ Logout page
 
 ## Unsolved Bugs
 
-* Updating post can update all fields except featured image.
-* Clicking on page numbers sometimes won't react.
-* In search results comment count is not showing.
+*  Updating post can update all fields except featured image: This means that users can make changes to all parts of a post, including the title, body text, and other fields, but they cannot update the featured image. If they want to change the image, they will need to upload a new one.
+
+* Clicking on page numbers sometimes won't react: This is a user experience issue where users may click on a page number in the pagination, but the page does not load or react. This can be frustrating for users who are trying to navigate the website. This issue needs to be addressed to ensure a smooth user experience.
+
+* In search results comment count is not showing: This means that when users search for posts, the comment count is not displayed in the search results. This information is important for users who want to quickly see how many comments a post has received. The comment count should be added to the search results to improve user experience.
 
 
 [Back to README.](./README.md)
