@@ -185,6 +185,7 @@ Testing of this project can be accessed [here.](./TESTING.md)
 - Jigsaw CSS Validator - Validating CSS code.
 - Ci Python Linter - Validating Python code.
 - JS Hint - Validating Javascript code.
+- Pxhere - Ilustrative images for website.
 
 ### Python packages
 

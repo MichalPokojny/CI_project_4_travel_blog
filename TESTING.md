@@ -1,18 +1,8 @@
 # Testing
 
-## Browser Testing
-
-The website has been tested thoroughly on several different browsers.
-
-* Google Chrome
-* Mozilla Firefox
-* Microsoft Edge
-* Safari
-* Opera
-
 ## Code Validation
 
-Python Validation
+Python
 
 * Python code was tested using PEP8 Code Institute [Python Linter Validator](https://pep8ci.herokuapp.com/)
 
@@ -60,19 +50,221 @@ urls.py
 <img src="./assets/test/pep_info_urls.png">
 </p>
 
-HTML 
+HTML
 
-* HTML code was tested using 
+* HTML code was tested using [W3 Validator](https://validator.w3.org/)
+
+Every page has passed the W3 validator
+
+<p align="center">
+<img src="./assets/test/html_validator.png">
+</p>
+
+CSS
+
+* CSS code was tested using [Jigsaw W3 Validator](https://jigsaw.w3.org/)
+
+<p align="center">
+<img src="./assets/test/css_validator.png">
+</p>
+
+JavaScript
+
+* Javascript code was tested using [JSHint](https://jshint.com/)
+
+<p align="center">
+<img src="./assets/test/javascript_validator.png">
+</p>
+
+## Browser Testing
+
+The website has been tested thoroughly on several different browsers.
+
+* Google Chrome
+* Mozilla Firefox
+* Microsoft Edge
+* Safari
+* Opera
+
+### Google Chrome Lighthouse
+
+Lighthouse was used to test performance, Accesibility, Best Practices and SEO of the website.
+
+<details>
+
+<summary>Desktop</summary>
+
+Home page 
+
+<p align="center">
+<img src="./assets/test/home_desktop.png">
+</p>
+
+About us page 
+
+<p align="center">
+<img src="./assets/test/about_desktop.png">
+</p>
+
+Blog page 
+
+<p align="center">
+<img src="./assets/test/blog_desktop.png">
+</p>
+
+Contact Us page 
+
+<p align="center">
+<img src="./assets/test/contact_desktop.png">
+</p>
+
+Search page 
+
+<p align="center">
+<img src="./assets/test/search_desktop.png">
+</p>
+
+Profile page 
+
+<p align="center">
+<img src="./assets/test/profile_desktop.png">
+</p>
+
+Logout page 
+
+<p align="center">
+<img src="./assets/test/logout_desktop.png">
+</p>
+
+</details>
+
+<details>
+
+<summary>Mobile</summary>
+
+Home page 
+
+<p align="center">
+<img src="./assets/test/home_phone.png">
+</p>
+
+About us page 
+
+<p align="center">
+<img src="./assets/test/about_phone.png">
+</p>
+
+Blog page 
+
+<p align="center">
+<img src="./assets/test/blog_phone.png">
+</p>
+
+Contact Us page 
+
+<p align="center">
+<img src="./assets/test/contact_phone.png">
+</p>
+
+Search page 
+
+<p align="center">
+<img src="./assets/test/search_phone.png">
+</p>
+
+Profile page 
+
+<p align="center">
+<img src="./assets/test/profile_phone.png">
+</p>
+
+Logout page 
+
+<p align="center">
+<img src="./assets/test/logout_phone.png">
+</p>
+
+</details>
 
 
+## Black box manual testing
+
+<details>
+
+<summary>TEST PLAN</summary>
+
+<p align="center">
+<img src="./assets/test/test_plan_1.png">
+</p>
+
+<p align="center">
+<img src="./assets/test/test_plan_2.png">
+</p>
+
+<p align="center">
+<img src="./assets/test/test_plan_3.png">
+</p>
+
+<p align="center">
+<img src="./assets/test/test_plan_4.png">
+</p>
+
+</details>
+
+<details>
+
+<summary>TEST DATA</summary>
+
+<p align="center">
+<img src="./assets/test/test_data_1.png">
+</p>
+
+<p align="center">
+<img src="./assets/test/test_data_2.png">
+</p>
+
+<p align="center">
+<img src="./assets/test/test_data_3.png">
+</p>
+
+<p align="center">
+<img src="./assets/test/test_data_4.png">
+</p>
+
+<p align="center">
+<img src="./assets/test/test_data_5.png">
+</p>
+
+<p align="center">
+<img src="./assets/test/test_data_6.png">
+</p>
+
+</details>
+
+<details>
+
+<summary>TEST LOG</summary>
+
+<p align="center">
+<img src="./assets/test/test_log_1.png">
+</p>
+
+<p align="center">
+<img src="./assets/test/test_log_2.png">
+</p>
+
+<p align="center">
+<img src="./assets/test/test_log_3.png">
+</p>
+
+</details>
 
 
-
-
-
-## Bugs
+## Unsolved Bugs
 
 * Updating post can update all fields except featured image.
 * Clicking on page numbers sometimes won't react.
+* In search results comment count is not showing.
+
 
 [Back to README.](./README.md)
